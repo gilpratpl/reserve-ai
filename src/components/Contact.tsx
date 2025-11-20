@@ -37,19 +37,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "hola@booksie.com",
-      link: "mailto:hola@booksie.com",
+      content: "info@ndxai.eu",
+      link: "mailto:info@ndxai.eu",
     },
     {
       icon: Phone,
       title: "Teléfono",
-      content: "+34 900 000 000",
-      link: "tel:+34900000000",
+      content: "+34 651 590 000",
+      link: "tel:+34651590000",
     },
     {
       icon: MapPin,
       title: "Oficina",
-      content: "Madrid, España",
+      content: "Vic, Barcelona",
       link: "#",
     },
   ];
@@ -171,9 +171,9 @@ const Contact = () => {
               </p>
               <p className="text-sm text-muted-foreground/80 mb-8">
                 Producto de{" "}
-                <a 
-                  href="https://ndxai.eu" 
-                  target="_blank" 
+                <a
+                  href="https://ndxai.eu"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline font-medium"
                 >

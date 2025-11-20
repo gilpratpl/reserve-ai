@@ -3,10 +3,8 @@ import { Utensils } from "lucide-react";
 const Footer = () => {
   const links = {
     producto: [
-      { name: "Características", href: "#" },
+      { name: "Características", href: "#features" },
       { name: "Precios", href: "#pricing" },
-      { name: "Integraciones", href: "#" },
-      { name: "API", href: "#" }
     ],
     empresa: [
       { name: "Contacto", href: "#contact" }
@@ -15,7 +13,6 @@ const Footer = () => {
       { name: "Privacidad", href: "#" },
       { name: "Términos", href: "#" },
       { name: "Cookies", href: "#" },
-      { name: "Licencias", href: "#" }
     ]
   };
 
@@ -103,7 +100,7 @@ const Footer = () => {
             . Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/company/neural-dynamics-ai" className="text-muted-foreground hover:text-primary transition-colors">
               LinkedIn
             </a>
           </div>

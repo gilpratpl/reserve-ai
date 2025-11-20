@@ -19,12 +19,11 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
   }, []);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-background/80 backdrop-blur-lg shadow-soft" 
-          : "bg-transparent"
-      }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-background/80 backdrop-blur-lg shadow-soft"
+        : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -47,9 +46,11 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
             <a href="#how" className="text-foreground hover:text-primary transition-colors font-medium">
               Cómo funciona
             </a>
-            <Button variant="outline">
-              Iniciar Sesión
-            </Button>
+            <a href="https://frontend-restaurant-rho.vercel.app" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline">
+                Iniciar Sesión
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -69,22 +70,22 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/50 bg-background/95 backdrop-blur-lg">
             <div className="flex flex-col gap-4">
-              <a 
-                href="#features" 
+              <a
+                href="#features"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Características
               </a>
-              <a 
-                href="#pricing" 
+              <a
+                href="#pricing"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Precios
               </a>
-              <a 
-                href="#how" 
+              <a
+                href="#how"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

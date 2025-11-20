@@ -56,7 +56,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         "SLA garantizado",
         "Training del equipo"
       ],
-      cta: "Contactar Ventas",
+      cta: "Agendar Demo",
       popular: false
     }
   ];
@@ -80,8 +80,8 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
             <Card
               key={index}
               className={`relative p-8 ${plan.popular
-                  ? 'border-2 border-primary shadow-medium scale-105 lg:scale-110'
-                  : 'border-border/50'
+                ? 'border-2 border-primary shadow-medium scale-105 lg:scale-110'
+                : 'border-border/50'
                 }`}
             >
               {plan.popular && (
@@ -109,12 +109,12 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
                 {/* CTA */}
                 <Button
                   className={`w-full h-12 ${plan.popular
-                      ? 'bg-gradient-primary hover:opacity-90 shadow-soft'
-                      : ''
+                    ? 'bg-gradient-primary hover:opacity-90 shadow-soft'
+                    : ''
                     }`}
                   variant={plan.popular ? 'default' : 'outline'}
                   size="lg"
-                  onClick={plan.cta === "Agendar Demo" || plan.cta === "Contactar Ventas" ? onDemoClick : undefined}
+                  onClick={plan.cta === "Agendar Demo" ? onDemoClick : undefined}
                 >
                   {plan.cta}
                 </Button>
