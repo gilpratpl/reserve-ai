@@ -1,7 +1,7 @@
 import { Bot, LayoutDashboard, MessageSquare, Phone, Calendar, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import whatsappImage from "@/assets/whatsapp-bot.jpg";
-import dashboardImage from "@/assets/dashboard-preview.jpg";
+import whatsappImage from "@/assets/chat-real.jpg";
+import dashboardImage from "@/assets/whatsapp-reserva.jpg";
 import tableLayoutImage from "@/assets/table-layout.png";
 
 const Features = () => {
@@ -57,7 +57,7 @@ const Features = () => {
         {/* Feature grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {features.map((feature, index) => (
-            <Card 
+            <Card
               key={index}
               className="p-6 hover:shadow-medium transition-all duration-300 hover:-translate-y-1 border-border/50"
             >
@@ -69,14 +69,14 @@ const Features = () => {
         </div>
 
         {/* Product showcase */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* WhatsApp Bot */}
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
               <MessageSquare className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Bot WhatsApp</span>
             </div>
-            <h3 className="text-3xl md:text-4xl font-bold">
+            <h3 className="text-3xl md:text-4xl font-bold pt-2">
               Reservas por chat en segundos
             </h3>
             <p className="text-lg text-muted-foreground">
@@ -102,25 +102,25 @@ const Features = () => {
                 <span className="text-foreground">Recordatorios inteligentes</span>
               </li>
             </ul>
-            <img 
-              src={whatsappImage} 
-              alt="WhatsApp Bot" 
+            <img
+              src={whatsappImage}
+              alt="Sistema de gestión de reservas - Dashboard de horarios"
               className="rounded-2xl shadow-soft lg:hidden"
             />
           </div>
           <div className="hidden lg:block">
-            <img 
-              src={whatsappImage} 
-              alt="WhatsApp Bot" 
+            <img
+              src={whatsappImage}
+              alt="Sistema de gestión de reservas - Dashboard de horarios"
               className="rounded-2xl shadow-medium hover:shadow-lg transition-shadow"
             />
           </div>
 
           {/* Dashboard */}
           <div className="hidden lg:block lg:order-first">
-            <img 
-              src={dashboardImage} 
-              alt="Dashboard" 
+            <img
+              src={dashboardImage}
+              alt="Conversación de WhatsApp - Reserva de restaurante"
               className="rounded-2xl shadow-medium hover:shadow-lg transition-shadow"
             />
           </div>
@@ -155,49 +155,64 @@ const Features = () => {
                 <span className="text-foreground">Estadísticas y reportes detallados</span>
               </li>
             </ul>
-            <img 
-              src={dashboardImage} 
-              alt="Dashboard" 
+            <img
+              src={dashboardImage}
+              alt="Conversación de WhatsApp - Reserva de restaurante"
               className="rounded-2xl shadow-soft lg:hidden"
             />
           </div>
+        </div>
 
-          {/* Table Layout Management */}
-          <div className="space-y-6 mt-12">
+        {/* Table Layout Management */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
+          <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
               <Calendar className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Gestión de Mesas</span>
             </div>
             <h3 className="text-3xl md:text-4xl font-bold">
-              Disposición visual de tus mesas
+              Diseña el layout perfecto para tu restaurante
             </h3>
             <p className="text-lg text-muted-foreground">
-              Organiza y visualiza el layout completo de tu restaurante. Arrastra, configura y asigna mesas con solo unos clics. Controla la disponibilidad en tiempo real.
+              Crea y personaliza la distribución de mesas de tu restaurante con nuestro editor visual intuitivo. Arrastra y coloca mesas donde quieras, ajusta capacidades y visualiza la ocupación en tiempo real.
             </p>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
+            <div className="grid sm:grid-cols-2 gap-4 mt-8">
+              <div className="p-4 rounded-lg bg-foreground/5 border border-border/50">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                  <Calendar className="w-4 h-4 text-primary" />
                 </div>
-                <span className="text-foreground">Editor visual de distribución de mesas</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
+                <h4 className="font-semibold mb-1">Editor Visual</h4>
+                <p className="text-sm text-muted-foreground">Arrastra y configura mesas con facilidad</p>
+              </div>
+              <div className="p-4 rounded-lg bg-foreground/5 border border-border/50">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                  <Users className="w-4 h-4 text-primary" />
                 </div>
-                <span className="text-foreground">Estado de ocupación en tiempo real</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
+                <h4 className="font-semibold mb-1">Tiempo Real</h4>
+                <p className="text-sm text-muted-foreground">Monitorea la ocupación al instante</p>
+              </div>
+              <div className="p-4 rounded-lg bg-foreground/5 border border-border/50">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                  <LayoutDashboard className="w-4 h-4 text-primary" />
                 </div>
-                <span className="text-foreground">Configuración flexible de capacidad</span>
-              </li>
-            </ul>
-            <img 
-              src={tableLayoutImage} 
-              alt="Disposición de mesas del restaurante" 
-              className="rounded-2xl shadow-medium hover:shadow-lg transition-shadow mt-6"
+                <h4 className="font-semibold mb-1">Flexible</h4>
+                <p className="text-sm text-muted-foreground">Ajusta capacidades según necesidad</p>
+              </div>
+              <div className="p-4 rounded-lg bg-foreground/5 border border-border/50">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                  <Bot className="w-4 h-4 text-primary" />
+                </div>
+                <h4 className="font-semibold mb-1">Inteligente</h4>
+                <p className="text-sm text-muted-foreground">Sugerencias automáticas de distribución</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform rotate-6"></div>
+            <img
+              src={tableLayoutImage}
+              alt="Disposición de mesas del restaurante"
+              className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
             />
           </div>
         </div>

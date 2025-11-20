@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-const CTA = () => {
+interface CTAProps {
+  onDemoClick?: () => void;
+}
+
+const CTA = ({ onDemoClick }: CTAProps) => {
   return (
     <section className="py-24 px-4 bg-gradient-soft">
       <div className="container mx-auto">
@@ -30,6 +34,7 @@ const CTA = () => {
                 <Button 
                   size="lg" 
                   className="text-lg px-8 h-14 bg-transparent border-2 border-white text-white hover:bg-white/10"
+                  onClick={onDemoClick}
                 >
                   Agendar Demo
                 </Button>

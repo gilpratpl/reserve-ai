@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Utensils, Menu, X } from "lucide-react";
 
-const Navigation = () => {
+interface NavigationProps {
+  onDemoClick?: () => void;
+}
+
+const Navigation = ({ onDemoClick }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -29,7 +33,7 @@ const Navigation = () => {
             <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
               <Utensils className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold">AMARU</span>
+            <span className="text-xl font-bold">Booksie</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -45,9 +49,6 @@ const Navigation = () => {
             </a>
             <Button variant="outline">
               Iniciar Sesión
-            </Button>
-            <Button className="bg-gradient-primary hover:opacity-90">
-              Empezar Gratis
             </Button>
           </div>
 
@@ -91,9 +92,6 @@ const Navigation = () => {
               </a>
               <Button variant="outline" className="w-full">
                 Iniciar Sesión
-              </Button>
-              <Button className="w-full bg-gradient-primary hover:opacity-90">
-                Empezar Gratis
               </Button>
             </div>
           </div>
