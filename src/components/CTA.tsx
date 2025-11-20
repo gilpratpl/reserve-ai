@@ -29,15 +29,7 @@ const CTA = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                 <Button 
                   size="lg" 
-                  className="group text-lg px-8 h-14 bg-white text-primary hover:bg-white/90 shadow-lg"
-                >
-                  Prueba Gratis 14 Días
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="text-lg px-8 h-14 border-2 border-white text-white hover:bg-white/10"
+                  className="text-lg px-8 h-14 bg-transparent border-2 border-white text-white hover:bg-white/10"
                 >
                   Agendar Demo
                 </Button>
