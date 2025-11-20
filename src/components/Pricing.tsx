@@ -34,7 +34,7 @@ const Pricing = () => {
         "Reportes avanzados",
         "Multi-idioma"
       ],
-      cta: "Prueba 14 días gratis",
+      cta: "Agendar Demo",
       popular: true
     },
     {

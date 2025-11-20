@@ -2,6 +2,7 @@ import { Bot, LayoutDashboard, MessageSquare, Phone, Calendar, Users } from "luc
 import { Card } from "@/components/ui/card";
 import whatsappImage from "@/assets/whatsapp-bot.jpg";
 import dashboardImage from "@/assets/dashboard-preview.jpg";
+import tableLayoutImage from "@/assets/table-layout.png";
 
 const Features = () => {
   const features = [
@@ -158,6 +159,45 @@ const Features = () => {
               src={dashboardImage} 
               alt="Dashboard" 
               className="rounded-2xl shadow-soft lg:hidden"
+            />
+          </div>
+
+          {/* Table Layout Management */}
+          <div className="space-y-6 mt-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+              <Calendar className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Gestión de Mesas</span>
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold">
+              Disposición visual de tus mesas
+            </h3>
+            <p className="text-lg text-muted-foreground">
+              Organiza y visualiza el layout completo de tu restaurante. Arrastra, configura y asigna mesas con solo unos clics. Controla la disponibilidad en tiempo real.
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                </div>
+                <span className="text-foreground">Editor visual de distribución de mesas</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                </div>
+                <span className="text-foreground">Estado de ocupación en tiempo real</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                </div>
+                <span className="text-foreground">Configuración flexible de capacidad</span>
+              </li>
+            </ul>
+            <img 
+              src={tableLayoutImage} 
+              alt="Disposición de mesas del restaurante" 
+              className="rounded-2xl shadow-medium hover:shadow-lg transition-shadow mt-6"
             />
           </div>
         </div>

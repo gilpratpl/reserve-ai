@@ -39,10 +39,6 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-7 duration-700 delay-300">
-            <Button size="lg" className="group text-lg px-8 h-14 bg-gradient-primary hover:opacity-90 shadow-medium">
-              Empieza Gratis
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 h-14 border-2">
               <Calendar className="mr-2 w-5 h-5" />
               Ver Demo
