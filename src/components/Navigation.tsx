@@ -91,9 +91,11 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
               >
                 Cómo funciona
               </a>
-              <Button variant="outline" className="w-full">
-                Iniciar Sesión
-              </Button>
+              <a href="https://frontend-restaurant-rho.vercel.app" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline">
+                  Iniciar Sesión
+                </Button>
+              </a>
             </div>
           </div>
         )}
