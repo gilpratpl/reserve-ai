@@ -106,29 +106,18 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
                   <span className="text-muted-foreground">/mes</span>
                 </div>
 
-                {plan.cta === "Agendar Demo" ? (
-                  <a href="https://frontend-restaurant-rho.vercel.app" target="_blank" rel="noopener noreferrer" className="w-full">
-                    <Button
-                      className={`w-full h-12 ${plan.popular
-                        ? 'bg-gradient-primary hover:opacity-90 shadow-soft'
-                        : ''
-                        }`}
-                      variant={plan.popular ? 'default' : 'outline'}
-                      size="lg"
-                    >
-                      Probar Demo
-                    </Button>
-                  </a>
-                ) : (
-                  <Button
-                    className="w-full h-12"
-                    variant="outline"
-                    size="lg"
-                    disabled
-                  >
-                    Contactar
-                  </Button>
-                )}
+                {/* CTA */}
+                <Button
+                  className={`w-full h-12 ${plan.popular
+                    ? 'bg-gradient-primary hover:opacity-90 shadow-soft'
+                    : ''
+                    }`}
+                  variant={plan.popular ? 'default' : 'outline'}
+                  size="lg"
+                  onClick={plan.cta === "Agendar Demo" ? onDemoClick : undefined}
+                >
+                  {plan.cta}
+                </Button>
 
                 {/* Features */}
                 <ul className="space-y-3 pt-4">

@@ -30,20 +30,19 @@ const CTA = ({ onDemoClick }: CTAProps) => {
                 Únete a más de 500 restaurantes que ya están ahorrando tiempo y aumentando sus reservas con nuestra solución de IA.
               </p>
 
-              <div className="flex flex-col items-center gap-4 pt-4">
-                <a href="https://frontend-restaurant-rho.vercel.app" target="_blank" rel="noopener noreferrer">
-                  <Button 
-                    size="lg" 
-                    className="text-lg px-8 h-14 bg-white text-primary hover:bg-white/90 font-bold"
-                  >
-                    Probar Demo Gratis
-                  </Button>
-                </a>
-                <div className="p-3 rounded-lg bg-white/15 backdrop-blur-sm text-sm text-white/90 max-w-md">
-                  <p className="font-medium text-white mb-1">🔑 Credenciales de prueba:</p>
-                  <p>Email: <span className="font-mono">test@ndxai.eu</span> · Pass: <span className="font-mono">test123456</span></p>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                <Button 
+                  size="lg" 
+                  className="text-lg px-8 h-14 bg-transparent border-2 border-white text-white hover:bg-white/10"
+                  onClick={onDemoClick}
+                >
+                  Agendar Demo
+                </Button>
               </div>
+
+              <p className="text-sm text-white/80">
+                Sin tarjeta de crédito • Cancelación gratuita • Soporte 24/7
+              </p>
             </div>
           </div>
         </div>

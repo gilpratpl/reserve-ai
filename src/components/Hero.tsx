@@ -52,18 +52,16 @@ const Hero = ({ onDemoClick }: HeroProps) => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col items-center gap-4 animate-in fade-in slide-in-from-bottom-7 duration-700 delay-300">
-            <a href="https://frontend-restaurant-rho.vercel.app" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="text-lg px-8 h-14">
-                <Calendar className="mr-2 w-5 h-5" />
-                Probar Demo Gratis
-              </Button>
-            </a>
-            <div className="mt-2 p-3 rounded-lg bg-foreground/5 border border-border/50 text-sm text-muted-foreground max-w-md">
-              <p className="font-medium text-foreground mb-1">🔑 Credenciales de prueba:</p>
-              <p>Email: <span className="font-mono text-primary">test@ndxai.eu</span> · Pass: <span className="font-mono text-primary">test123456</span></p>
-              <p className="mt-1 text-xs">Explora todas las funcionalidades sin compromiso</p>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-7 duration-700 delay-300">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-lg px-8 h-14 border-2"
+              onClick={onDemoClick}
+            >
+              <Calendar className="mr-2 w-5 h-5" />
+              Ver Demo
+            </Button>
           </div>
 
           {/* Stats */}
