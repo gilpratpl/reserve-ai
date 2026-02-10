@@ -32,7 +32,7 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
             <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
               <Utensils className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold">Booksie</span>
+            <span className="text-xl font-bold">Reserbot</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -46,7 +46,11 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
             <a href="#how" className="text-foreground hover:text-primary transition-colors font-medium">
               Cómo funciona
             </a>
-            <a href="https://frontend-restaurant-rho.vercel.app" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://frontend-restaurant-rho.vercel.app/login"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="outline">
                 Iniciar Sesión
               </Button>
@@ -91,7 +95,11 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
               >
                 Cómo funciona
               </a>
-              <a href="https://frontend-restaurant-rho.vercel.app" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://frontend-restaurant-rho.vercel.app/login"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button variant="outline">
                   Iniciar Sesión
                 </Button>

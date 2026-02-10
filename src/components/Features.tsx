@@ -1,10 +1,30 @@
 import { Bot, LayoutDashboard, MessageSquare, Phone, Calendar, Users, BarChart3, Image } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import whatsappImage from "@/assets/chat-real.jpg";
-import dashboardImage from "@/assets/whatsapp-reserva.jpg";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import whatsappImage from "@/assets/chat-real.png";
+import dashboardImage from "@/assets/whatsapp-reserva.png";
 import tableLayoutImage from "@/assets/table-layout.png";
-import statsImage from "@/assets/stats-dashboard.jpg";
+import statsImage from "@/assets/stats-dashboard.png";
 import mediaImage from "@/assets/media-management.jpg";
+
+interface ZoomableImageProps {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+const ZoomableImage = ({ src, alt, className }: ZoomableImageProps) => (
+  <Dialog>
+    <DialogTrigger asChild>
+      <button type="button" className="focus:outline-none">
+        <img src={src} alt={alt} className={`cursor-zoom-in ${className ?? ""}`} />
+      </button>
+    </DialogTrigger>
+    <DialogContent className="max-w-4xl border-none bg-transparent p-0 shadow-none">
+      <img src={src} alt={alt} className="w-full h-auto rounded-2xl shadow-medium" />
+    </DialogContent>
+  </Dialog>
+);
 
 const Features = () => {
   const features = [
@@ -104,14 +124,14 @@ const Features = () => {
                 <span className="text-foreground">Recordatorios inteligentes</span>
               </li>
             </ul>
-            <img
+            <ZoomableImage
               src={whatsappImage}
               alt="Sistema de gestión de reservas - Dashboard de horarios"
               className="rounded-2xl shadow-soft lg:hidden"
             />
           </div>
           <div className="hidden lg:block">
-            <img
+            <ZoomableImage
               src={whatsappImage}
               alt="Sistema de gestión de reservas - Dashboard de horarios"
               className="rounded-2xl shadow-medium hover:shadow-lg transition-shadow"
@@ -120,7 +140,7 @@ const Features = () => {
 
           {/* Dashboard */}
           <div className="hidden lg:block lg:order-first">
-            <img
+            <ZoomableImage
               src={dashboardImage}
               alt="Conversación de WhatsApp - Reserva de restaurante"
               className="rounded-2xl shadow-medium hover:shadow-lg transition-shadow"
@@ -157,7 +177,7 @@ const Features = () => {
                 <span className="text-foreground">Estadísticas y reportes detallados</span>
               </li>
             </ul>
-            <img
+            <ZoomableImage
               src={dashboardImage}
               alt="Conversación de WhatsApp - Reserva de restaurante"
               className="rounded-2xl shadow-soft lg:hidden"
@@ -211,7 +231,7 @@ const Features = () => {
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform rotate-6"></div>
-            <img
+            <ZoomableImage
               src={tableLayoutImage}
               alt="Disposición de mesas del restaurante"
               className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
@@ -223,7 +243,7 @@ const Features = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
           <div className="relative lg:order-first">
             <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform -rotate-3"></div>
-            <img
+            <ZoomableImage
               src={statsImage}
               alt="Dashboard de estadísticas de reservas"
               className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
@@ -302,7 +322,7 @@ const Features = () => {
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform rotate-3"></div>
-            <img
+            <ZoomableImage
               src={mediaImage}
               alt="Gestión de contenido multimedia del restaurante"
               className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"

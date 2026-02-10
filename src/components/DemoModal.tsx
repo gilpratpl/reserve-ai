@@ -14,7 +14,7 @@ interface DemoModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const DEMO_URL = "https://frontend-restaurant-rho.vercel.app";
+const DEMO_URL = "https://reserbot.ndxai.eu";
 const DEMO_EMAIL = "test@ndxai.eu";
 const DEMO_PASSWORD = "test123456";
 
@@ -28,7 +28,7 @@ const DemoModal = ({ open, onOpenChange }: DemoModalProps) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[480px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl">Prueba Booksie en vivo</DialogTitle>
+          <DialogTitle className="text-2xl">Prueba Reserbot en vivo</DialogTitle>
           <DialogDescription className="text-base">
             Accede a nuestra plataforma de prueba y explora todas las funcionalidades. Puedes mirar y probar todo lo que quieras.
           </DialogDescription>
@@ -37,7 +37,7 @@ const DemoModal = ({ open, onOpenChange }: DemoModalProps) => {
         <div className="space-y-4 py-4">
           <div className="p-4 rounded-xl bg-foreground/5 border border-border/50 space-y-3">
             <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Credenciales de acceso</p>
-            
+
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <User className="w-4 h-4 text-primary" />

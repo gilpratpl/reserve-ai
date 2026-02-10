@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 20 14% 15%;
 
-    /* Coral/Orange primary inspired by Booksie brand */
+    /* Coral/Orange primary inspired by Reserbot brand */
     --primary: 18 75% 55%;
     --primary-foreground: 0 0% 100%;
     --primary-light: 18 75% 65%;
@@ -44,11 +44,11 @@ All colors MUST be HSL.
     /* Gradient tokens */
     --gradient-primary: linear-gradient(135deg, hsl(18 75% 55%), hsl(18 90% 60%));
     --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%), hsl(20 8% 98%));
-    
+
     /* Shadows */
     --shadow-soft: 0 4px 24px -2px hsla(18 75% 55% / 0.12);
     --shadow-medium: 0 8px 32px -4px hsla(18 75% 55% / 0.2);
-    
+
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -83,10 +83,10 @@ All colors MUST be HSL.
     --border: 20 14% 18%;
     --input: 20 14% 18%;
     --ring: 18 75% 55%;
-    
+
     --gradient-primary: linear-gradient(135deg, hsl(18 75% 55%), hsl(18 90% 60%));
     --gradient-soft: linear-gradient(180deg, hsl(20 14% 8%), hsl(20 14% 10%));
-    
+
     --shadow-soft: 0 4px 24px -2px hsla(18 75% 55% / 0.2);
     --shadow-medium: 0 8px 32px -4px hsla(18 75% 55% / 0.3);
   }

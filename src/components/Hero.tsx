@@ -11,9 +11,9 @@ const Hero = ({ onDemoClick }: HeroProps) => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-soft">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Restaurant interior" 
+        <img
+          src={heroImage}
+          alt="Restaurant interior"
           className="w-full h-full object-cover opacity-10"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
@@ -27,9 +27,9 @@ const Hero = ({ onDemoClick }: HeroProps) => {
             <Bot className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">
               IA para Restaurantes ·{" "}
-              <a 
-                href="https://ndxai.eu" 
-                target="_blank" 
+              <a
+                href="https://ndxai.eu"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
@@ -53,14 +53,14 @@ const Hero = ({ onDemoClick }: HeroProps) => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-7 duration-700 delay-300">
-            <Button 
-              size="lg" 
-              variant="outline" 
+            <Button
+              size="lg"
+              variant="outline"
               className="text-lg px-8 h-14 border-2"
               onClick={onDemoClick}
             >
               <Calendar className="mr-2 w-5 h-5" />
-              Ver Demo
+              Pruebalo ahora
             </Button>
           </div>
 

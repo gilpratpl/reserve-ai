@@ -26,7 +26,7 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
                 <Utensils className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold">Booksie Reservas</span>
+              <span className="text-xl font-bold">Reserbot</span>
             </div>
             <p className="text-muted-foreground max-w-sm">
               La solución de IA más avanzada para gestión de reservas en restaurantes. Automatiza, optimiza y crece.
@@ -70,7 +70,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
+          {/*
           <div>
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
@@ -83,12 +83,13 @@ const Footer = () => {
               ))}
             </ul>
           </div>
+        */}
         </div>
 
         {/* Bottom */}
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 Booksie Reservas. Producto de{" "}
+            © 2025 Reserbot. Producto de{" "}
             <a
               href="https://ndxai.eu"
               target="_blank"

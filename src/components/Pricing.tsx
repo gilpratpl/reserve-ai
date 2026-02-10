@@ -114,7 +114,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
                     }`}
                   variant={plan.popular ? 'default' : 'outline'}
                   size="lg"
-                  onClick={plan.cta === "Agendar Demo" ? onDemoClick : undefined}
+                  onClick={plan.cta === "Pruebalo ahora" ? onDemoClick : undefined}
                 >
                   {plan.cta}
                 </Button>
