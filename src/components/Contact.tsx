@@ -1,59 +1,7 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    console.log("Formulario de contacto enviado:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-    }, 3000);
-  };
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email",
-      content: "info@ndxai.eu",
-      link: "mailto:info@ndxai.eu",
-    },
-    {
-      icon: Phone,
-      title: "Teléfono",
-      content: "+34 651 590 000",
-      link: "tel:+34651590000",
-    },
-    {
-      icon: MapPin,
-      title: "Oficina",
-      content: "Vic, Barcelona",
-      link: "#",
-    },
-  ];
-
   return (
     <section className="py-24 px-4 bg-background" id="contact">
       <div className="container mx-auto">
@@ -66,158 +14,71 @@ const Contact = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Contáctanos y nuestro equipo te responderá lo antes posible.
+            Contacta con nosotros directamente y te responderemos lo antes posible.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <Card className="p-8 border-border/50">
-            <div className="flex items-center gap-2 mb-6">
-              <MessageSquare className="w-5 h-5 text-primary" />
-              <h3 className="text-2xl font-bold">Envíanos un mensaje</h3>
-            </div>
-
-            {submitted ? (
-              <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8 text-primary" />
+        <div className="max-w-3xl mx-auto space-y-6">
+          {/* Contact options */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            <a href="mailto:info@ndxai.eu" className="block">
+              <Card className="p-8 border-border/50 hover:shadow-medium transition-all hover:border-primary/50 text-center h-full">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-7 h-7 text-primary" />
                 </div>
+                <h3 className="text-xl font-bold mb-2">Escríbenos por email</h3>
+                <p className="text-muted-foreground mb-4 text-sm">
+                  Envíanos un correo y te responderemos lo antes posible
+                </p>
+                <span className="text-primary font-medium">info@ndxai.eu</span>
+              </Card>
+            </a>
+
+            <a href="tel:+34651590000" className="block">
+              <Card className="p-8 border-border/50 hover:shadow-medium transition-all hover:border-primary/50 text-center h-full">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Llámanos directamente</h3>
+                <p className="text-muted-foreground mb-4 text-sm">
+                  Habla con nuestro equipo por teléfono
+                </p>
+                <span className="text-primary font-medium">+34 651 590 000</span>
+              </Card>
+            </a>
+          </div>
+
+          {/* Extra info */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            <Card className="p-6 border-border/50">
+              <div className="flex items-start gap-4">
+                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xl font-semibold mb-2">¡Mensaje enviado!</h4>
-                  <p className="text-muted-foreground">
-                    Gracias por contactarnos. Te responderemos en breve.
+                  <h4 className="font-semibold mb-1">Oficina</h4>
+                  <p className="text-sm text-muted-foreground">Vic, Barcelona</p>
+                  <p className="text-xs text-muted-foreground/80 mt-1">
+                    Producto de{" "}
+                    <a
+                      href="https://ndxai.eu"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline font-medium"
+                    >
+                      Neural Dynamics AI (NDXai)
+                    </a>
                   </p>
                 </div>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="contact-name">Nombre *</Label>
-                    <Input
-                      id="contact-name"
-                      placeholder="Tu nombre"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="contact-email">Email *</Label>
-                    <Input
-                      id="contact-email"
-                      type="email"
-                      placeholder="tu@email.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                    />
-                  </div>
-                </div>
+            </Card>
 
-                <div className="space-y-2">
-                  <Label htmlFor="contact-phone">Teléfono</Label>
-                  <Input
-                    id="contact-phone"
-                    type="tel"
-                    placeholder="+34 600 000 000"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="contact-subject">Asunto *</Label>
-                  <Input
-                    id="contact-subject"
-                    placeholder="¿En qué podemos ayudarte?"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="contact-message">Mensaje *</Label>
-                  <Textarea
-                    id="contact-message"
-                    placeholder="Escribe tu mensaje aquí..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={6}
-                    required
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-gradient-primary hover:opacity-90"
-                >
-                  <Send className="w-4 h-4 mr-2" />
-                  Enviar Mensaje
-                </Button>
-              </form>
-            )}
-          </Card>
-
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Información de contacto</h3>
-              <p className="text-muted-foreground mb-4">
-                Estamos disponibles para ayudarte con cualquier duda o consulta sobre Booksie.
-              </p>
-              <p className="text-sm text-muted-foreground/80 mb-8">
-                Producto de{" "}
-                <a
-                  href="https://ndxai.eu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline font-medium"
-                >
-                  Neural Dynamics AI (NDXai)
-                </a>
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {contactInfo.map((info, index) => {
-                const Icon = info.icon;
-                return (
-                  <Card
-                    key={index}
-                    className="p-6 border-border/50 hover:shadow-medium transition-all hover:border-primary/50"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-1">{info.title}</h4>
-                        <a
-                          href={info.link}
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          {info.content}
-                        </a>
-                      </div>
-                    </div>
-                  </Card>
-                );
-              })}
-            </div>
-
-            <Card className="p-6 border-primary/20 bg-primary/5">
+            <Card className="p-6 border-border/50">
               <div className="flex items-start gap-4">
-                <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-semibold mb-2">Horario de atención</h4>
-                  <div className="space-y-1 text-sm text-muted-foreground">
+                  <h4 className="font-semibold mb-1">Horario de atención</h4>
+                  <div className="space-y-0.5 text-sm text-muted-foreground">
                     <p>Lunes - Viernes: 9:00 - 18:00</p>
                     <p>Sábados: 10:00 - 14:00</p>
-                    <p>Domingos: Cerrado</p>
                   </div>
                 </div>
               </div>
@@ -230,4 +91,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
