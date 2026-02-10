@@ -1,8 +1,10 @@
-import { Bot, LayoutDashboard, MessageSquare, Phone, Calendar, Users } from "lucide-react";
+import { Bot, LayoutDashboard, MessageSquare, Phone, Calendar, Users, BarChart3, Image } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import whatsappImage from "@/assets/chat-real.jpg";
 import dashboardImage from "@/assets/whatsapp-reserva.jpg";
 import tableLayoutImage from "@/assets/table-layout.png";
+import statsImage from "@/assets/stats-dashboard.jpg";
+import mediaImage from "@/assets/media-management.jpg";
 
 const Features = () => {
   const features = [
@@ -212,6 +214,97 @@ const Features = () => {
             <img
               src={tableLayoutImage}
               alt="Disposición de mesas del restaurante"
+              className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            />
+          </div>
+        </div>
+
+        {/* Statistics Section */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
+          <div className="relative lg:order-first">
+            <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform -rotate-3"></div>
+            <img
+              src={statsImage}
+              alt="Dashboard de estadísticas de reservas"
+              className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            />
+          </div>
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20">
+              <BarChart3 className="w-4 h-4 text-accent" />
+              <span className="text-sm font-medium text-accent">Estadísticas</span>
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold">
+              Analítica avanzada de tu restaurante
+            </h3>
+            <p className="text-lg text-muted-foreground">
+              Conoce a fondo el comportamiento de tus clientes con métricas detalladas. Toma decisiones basadas en datos reales para optimizar tu servicio.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-4 mt-8">
+              <div className="p-4 rounded-lg bg-foreground/5 border border-border/50 text-center">
+                <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center mb-3 mx-auto">
+                  <Calendar className="w-4 h-4 text-accent" />
+                </div>
+                <h4 className="font-semibold mb-1">Duración Media</h4>
+                <p className="text-sm text-muted-foreground">Tiempo promedio de cada reserva</p>
+              </div>
+              <div className="p-4 rounded-lg bg-foreground/5 border border-border/50 text-center">
+                <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center mb-3 mx-auto">
+                  <BarChart3 className="w-4 h-4 text-accent" />
+                </div>
+                <h4 className="font-semibold mb-1">Retraso Medio</h4>
+                <p className="text-sm text-muted-foreground">Puntualidad de tus clientes</p>
+              </div>
+              <div className="p-4 rounded-lg bg-foreground/5 border border-border/50 text-center">
+                <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center mb-3 mx-auto">
+                  <Users className="w-4 h-4 text-accent" />
+                </div>
+                <h4 className="font-semibold mb-1">Top 10 Clientes</h4>
+                <p className="text-sm text-muted-foreground">Tus clientes más frecuentes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Media Section */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+              <Image className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Media</span>
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold">
+              Comparte tu contenido con los clientes
+            </h3>
+            <p className="text-lg text-muted-foreground">
+              Sube y gestiona todo el contenido visual de tu restaurante: menú del día, carta, eventos especiales y promociones. Tus clientes siempre tendrán la información actualizada.
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                </div>
+                <span className="text-foreground">Menú del día actualizable al instante</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                </div>
+                <span className="text-foreground">Carta digital con fotos y precios</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                </div>
+                <span className="text-foreground">Promoción de eventos y ofertas especiales</span>
+              </li>
+            </ul>
+          </div>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform rotate-3"></div>
+            <img
+              src={mediaImage}
+              alt="Gestión de contenido multimedia del restaurante"
               className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
             />
           </div>
