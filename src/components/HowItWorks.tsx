@@ -1,27 +1,129 @@
 import { Smartphone, Settings, Zap, TrendingUp } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const HowItWorks = () => {
+  const { language } = useLanguage();
+
+  const copy = {
+    es: {
+      titleLine1: "Implementación en",
+      titleLine2: "menos de 15 minutos",
+      subtitle: "No necesitas conocimientos técnicos. Nuestro sistema se integra sin complicaciones.",
+      steps: [
+        {
+          title: "1. Configura tu cuenta",
+          description:
+            "Crea tu cuenta en menos de 5 minutos. Conecta tu número de WhatsApp Business y configura el horario de tu restaurante.",
+        },
+        {
+          title: "2. Personaliza tu bot",
+          description:
+            "Configura las mesas, horarios y mensajes. El bot aprende las características específicas de tu restaurante.",
+        },
+        {
+          title: "3. Activa y automatiza",
+          description:
+            "Tu bot empieza a recibir reservas inmediatamente. Funciona 24/7 sin necesidad de supervisión.",
+        },
+        {
+          title: "4. Gestiona y optimiza",
+          description:
+            "Usa el dashboard para visualizar reservas, optimizar disponibilidad y obtener insights de tu negocio.",
+        },
+      ],
+    },
+    en: {
+      titleLine1: "Go live in",
+      titleLine2: "under 15 minutes",
+      subtitle: "No technical skills required. Our system integrates without friction.",
+      steps: [
+        {
+          title: "1. Set up your account",
+          description:
+            "Create your account in under 5 minutes. Connect your WhatsApp Business number and configure your restaurant schedule.",
+        },
+        {
+          title: "2. Customize your bot",
+          description:
+            "Configure tables, opening hours and messages. The bot learns your restaurant’s specific rules.",
+        },
+        {
+          title: "3. Activate and automate",
+          description:
+            "Your bot starts receiving reservations immediately. It works 24/7 with no supervision needed.",
+        },
+        {
+          title: "4. Manage and optimize",
+          description:
+            "Use the dashboard to visualize bookings, optimize availability and get business insights.",
+        },
+      ],
+    },
+    ca: {
+      titleLine1: "Posada en marxa en",
+      titleLine2: "menys de 15 minuts",
+      subtitle:
+        "No calen coneixements tècnics. El nostre sistema s’integra sense complicacions.",
+      steps: [
+        {
+          title: "1. Configura el teu compte",
+          description:
+            "Crea el teu compte en menys de 5 minuts. Connecta el teu número de WhatsApp Business i configura l’horari del restaurant.",
+        },
+        {
+          title: "2. Personalitza el bot",
+          description:
+            "Configura taules, horaris i missatges. El bot aprèn les característiques específiques del teu restaurant.",
+        },
+        {
+          title: "3. Activa i automatitza",
+          description:
+            "El bot comença a rebre reserves immediatament. Funciona 24/7 sense necessitat de supervisió.",
+        },
+        {
+          title: "4. Gestiona i optimitza",
+          description:
+            "Utilitza el dashboard per visualitzar reserves, optimitzar disponibilitat i obtenir insights del negoci.",
+        },
+      ],
+    },
+    it: {
+      titleLine1: "Attivazione in",
+      titleLine2: "meno di 15 minuti",
+      subtitle:
+        "Non servono competenze tecniche. Il sistema si integra senza complicazioni.",
+      steps: [
+        {
+          title: "1. Configura il tuo account",
+          description:
+            "Crea il tuo account in meno di 5 minuti. Collega il numero WhatsApp Business e imposta gli orari del ristorante.",
+        },
+        {
+          title: "2. Personalizza il bot",
+          description:
+            "Configura tavoli, orari e messaggi. Il bot impara le regole specifiche del tuo ristorante.",
+        },
+        {
+          title: "3. Attiva e automatizza",
+          description:
+            "Il bot inizia subito a ricevere prenotazioni. Funziona 24/7 senza supervisione.",
+        },
+        {
+          title: "4. Gestisci e ottimizza",
+          description:
+            "Usa il dashboard per visualizzare le prenotazioni, ottimizzare la disponibilità e ottenere insight sul business.",
+        },
+      ],
+    },
+  } as const;
+
+  const t = copy[language];
+
   const steps = [
-    {
-      icon: Smartphone,
-      title: "1. Configura tu cuenta",
-      description: "Crea tu cuenta en menos de 5 minutos. Conecta tu número de WhatsApp Business y configura el horario de tu restaurante."
-    },
-    {
-      icon: Settings,
-      title: "2. Personaliza tu bot",
-      description: "Configura las mesas, horarios y mensajes. El bot aprende las características específicas de tu restaurante."
-    },
-    {
-      icon: Zap,
-      title: "3. Activa y automatiza",
-      description: "Tu bot empieza a recibir reservas inmediatamente. Funciona 24/7 sin necesidad de supervisión."
-    },
-    {
-      icon: TrendingUp,
-      title: "4. Gestiona y optimiza",
-      description: "Usa el dashboard para visualizar reservas, optimizar disponibilidad y obtener insights de tu negocio."
-    }
+    { icon: Smartphone, title: t.steps[0].title, description: t.steps[0].description },
+    { icon: Settings, title: t.steps[1].title, description: t.steps[1].description },
+    { icon: Zap, title: t.steps[2].title, description: t.steps[2].description },
+    { icon: TrendingUp, title: t.steps[3].title, description: t.steps[3].description },
   ];
 
   return (
@@ -30,13 +132,13 @@ const HowItWorks = () => {
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Implementación en
+            {t.titleLine1}
             <span className="block mt-2 bg-gradient-primary bg-clip-text text-transparent">
-              menos de 15 minutos
+              {t.titleLine2}
             </span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            No necesitas conocimientos técnicos. Nuestro sistema se integra sin complicaciones.
+            {t.subtitle}
           </p>
         </div>
 

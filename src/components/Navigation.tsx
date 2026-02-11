@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Utensils, Menu, X } from "lucide-react";
+import { LANGUAGE_OPTIONS, useLanguage } from "@/i18n/LanguageContext";
 
 interface NavigationProps {
   onDemoClick?: () => void;
@@ -9,6 +10,40 @@ interface NavigationProps {
 const Navigation = ({ onDemoClick }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
+
+  const copy = {
+    es: {
+      features: "Características",
+      pricing: "Precios",
+      howItWorks: "Cómo funciona",
+      login: "Iniciar sesión",
+      brand: "Reserbot",
+    },
+    en: {
+      features: "Features",
+      pricing: "Pricing",
+      howItWorks: "How it works",
+      login: "Log in",
+      brand: "Reserbot",
+    },
+    ca: {
+      features: "Característiques",
+      pricing: "Preus",
+      howItWorks: "Com funciona",
+      login: "Inicia sessió",
+      brand: "Reserbot",
+    },
+    it: {
+      features: "Funzionalità",
+      pricing: "Prezzi",
+      howItWorks: "Come funziona",
+      login: "Accedi",
+      brand: "Reserbot",
+    },
+  } as const;
+
+  const t = copy[language];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,27 +67,46 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
             <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
               <Utensils className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold">Reserbot</span>
+            <span className="text-xl font-bold">{t.brand}</span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <a href="#features" className="text-foreground hover:text-primary transition-colors font-medium">
-              Características
+              {t.features}
             </a>
             <a href="#pricing" className="text-foreground hover:text-primary transition-colors font-medium">
-              Precios
+              {t.pricing}
             </a>
             <a href="#how" className="text-foreground hover:text-primary transition-colors font-medium">
-              Cómo funciona
+              {t.howItWorks}
             </a>
+
+            {/* Language selector */}
+            <div className="flex items-center gap-1 rounded-full border border-border/60 bg-background/80 px-1.5 py-0.5 text-xs">
+              {LANGUAGE_OPTIONS.map((option) => (
+                <button
+                  key={option.code}
+                  type="button"
+                  onClick={() => setLanguage(option.code)}
+                  className={`px-2 py-0.5 rounded-full transition-colors ${
+                    option.code === language
+                      ? "bg-primary text-white"
+                      : "text-muted-foreground hover:bg-muted"
+                  }`}
+                >
+                  {option.short}
+                </button>
+              ))}
+            </div>
+
             <a
-              href="https://frontend-restaurant-rho.vercel.app/login"
+              href="https://reserbot.ndxai.eu/login"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button variant="outline">
-                Iniciar Sesión
+                {t.login}
               </Button>
             </a>
           </div>
@@ -79,29 +133,48 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
                 className="text-foreground hover:text-primary transition-colors font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Características
+                {t.features}
               </a>
               <a
                 href="#pricing"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Precios
+                {t.pricing}
               </a>
               <a
                 href="#how"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Cómo funciona
+                {t.howItWorks}
               </a>
+              <div className="flex items-center gap-2 pt-2">
+                <span className="text-xs text-muted-foreground">Idioma</span>
+                <div className="flex items-center gap-1 rounded-full border border-border/60 bg-background/80 px-1.5 py-0.5 text-xs">
+                  {LANGUAGE_OPTIONS.map((option) => (
+                    <button
+                      key={option.code}
+                      type="button"
+                      onClick={() => setLanguage(option.code)}
+                      className={`px-2 py-0.5 rounded-full transition-colors ${
+                        option.code === language
+                          ? "bg-primary text-white"
+                          : "text-muted-foreground hover:bg-muted"
+                      }`}
+                    >
+                      {option.short}
+                    </button>
+                  ))}
+                </div>
+              </div>
               <a
-                href="https://frontend-restaurant-rho.vercel.app/login"
+                href="https://reserbot.ndxai.eu/login"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button variant="outline">
-                  Iniciar Sesión
+                  {t.login}
                 </Button>
               </a>
             </div>

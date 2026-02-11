@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, X, Sparkles } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface PricingProps {
   onDemoClick?: () => void;
@@ -12,77 +13,376 @@ interface PlanFeature {
 }
 
 const Pricing = ({ onDemoClick }: PricingProps) => {
+  const { language } = useLanguage();
+
+  const copy = {
+    es: {
+      title: "Precios simples y transparentes",
+      subtitle:
+        "Elige el plan perfecto para tu restaurante. Sin costes ocultos, cancela cuando quieras.",
+      perMonth: "/mes",
+      popularTag: "Más Popular",
+      plans: [
+        {
+          name: "Gratuito",
+          description: "Para descubrir la plataforma",
+          cta: "Empezar gratis",
+          features: [
+            "Dashboard básico",
+            "Hasta 20 reservas/mes",
+            "3 mesas configurables",
+            "Soporte por email",
+            "Bot WhatsApp conversacional",
+            "Asistente telefónico",
+            "Recordatorios automáticos",
+          ],
+        },
+        {
+          name: "Prueba 14 días",
+          description: "Prueba todo durante 2 semanas",
+          cta: "Probar gratis",
+          features: [
+            "Bot WhatsApp",
+            "Hasta 100 reservas",
+            "Dashboard completo",
+            "5 mesas configurables",
+            "Confirmaciones automáticas",
+            "Recordatorios inteligentes",
+            "Sin compromiso, sin tarjeta",
+            "Asistente telefónico",
+          ],
+        },
+        {
+          name: "Professional",
+          description: "Para restaurantes establecidos",
+          cta: "Ver demo",
+          features: [
+            "Bot WhatsApp",
+            "Hasta 500 reservas/mes",
+            "Dashboard completo",
+            "Mesas ilimitadas",
+            "Soporte prioritario 24/7",
+            "Confirmaciones automáticas",
+            "Recordatorios inteligentes",
+            "Reportes avanzados",
+            "Multi-idioma",
+            "Asistente telefónico",
+          ],
+        },
+        {
+          name: "Enterprise",
+          description: "Para cadenas de restaurantes",
+          cta: "Ver demo",
+          features: [
+            "Bot WhatsApp",
+            "Asistente telefónico",
+            "Reservas ilimitadas",
+            "Multi-restaurante",
+            "Dashboard completo",
+            "Mesas ilimitadas",
+            "Soporte prioritario 24/7",
+            "Confirmaciones automáticas",
+            "Recordatorios inteligentes",
+            "Reportes avanzados",
+            "Multi-idioma",
+          ],
+        },
+      ],
+    },
+    en: {
+      title: "Simple, transparent pricing",
+      subtitle:
+        "Choose the perfect plan for your restaurant. No hidden fees, cancel anytime.",
+      perMonth: "/month",
+      popularTag: "Most popular",
+      plans: [
+        {
+          name: "Free",
+          description: "To discover the platform",
+          cta: "Start for free",
+          features: [
+            "Basic dashboard",
+            "Up to 20 bookings / month",
+            "3 configurable tables",
+            "Email support",
+            "Conversational WhatsApp bot",
+            "Phone assistant",
+            "Automatic reminders",
+          ],
+        },
+        {
+          name: "14‑day trial",
+          description: "Test everything for 2 weeks",
+          cta: "Try for free",
+          features: [
+            "WhatsApp bot",
+            "Up to 100 bookings",
+            "Full dashboard",
+            "5 configurable tables",
+            "Automatic confirmations",
+            "Smart reminders",
+            "No commitment, no card",
+            "Phone assistant",
+          ],
+        },
+        {
+          name: "Professional",
+          description: "For established restaurants",
+          cta: "View demo",
+          features: [
+            "WhatsApp bot",
+            "Up to 500 bookings / month",
+            "Full dashboard",
+            "Unlimited tables",
+            "Priority support 24/7",
+            "Automatic confirmations",
+            "Smart reminders",
+            "Advanced reports",
+            "Multi‑language",
+            "Phone assistant",
+          ],
+        },
+        {
+          name: "Enterprise",
+          description: "For restaurant chains",
+          cta: "View demo",
+          features: [
+            "WhatsApp bot",
+            "Phone assistant",
+            "Unlimited bookings",
+            "Multi‑restaurant",
+            "Full dashboard",
+            "Unlimited tables",
+            "Priority support 24/7",
+            "Automatic confirmations",
+            "Smart reminders",
+            "Advanced reports",
+            "Multi‑language",
+          ],
+        },
+      ],
+    },
+    ca: {
+      title: "Preus simples i transparents",
+      subtitle:
+        "Tria el pla perfecte per al teu restaurant. Sense costos ocults, cancel·la quan vulguis.",
+      perMonth: "/mes",
+      popularTag: "Més popular",
+      plans: [
+        {
+          name: "Gratuït",
+          description: "Per descobrir la plataforma",
+          cta: "Començar gratis",
+          features: [
+            "Dashboard bàsic",
+            "Fins a 20 reserves/mes",
+            "3 taules configurables",
+            "Suport per correu",
+            "Bot de WhatsApp conversacional",
+            "Assistent telefònic",
+            "Recordatoris automàtics",
+          ],
+        },
+        {
+          name: "Prova 14 dies",
+          description: "Prova-ho tot durant 2 setmanes",
+          cta: "Provar gratis",
+          features: [
+            "Bot WhatsApp",
+            "Fins a 100 reserves",
+            "Dashboard complet",
+            "5 taules configurables",
+            "Confirmacions automàtiques",
+            "Recordatoris intel·ligents",
+            "Sense compromís ni targeta",
+            "Assistent telefònic",
+          ],
+        },
+        {
+          name: "Professional",
+          description: "Per a restaurants consolidats",
+          cta: "Veure demo",
+          features: [
+            "Bot WhatsApp",
+            "Fins a 500 reserves/mes",
+            "Dashboard complet",
+            "Taules il·limitades",
+            "Suport prioritari 24/7",
+            "Confirmacions automàtiques",
+            "Recordatoris intel·ligents",
+            "Informes avançats",
+            "Multiidioma",
+            "Assistent telefònic",
+          ],
+        },
+        {
+          name: "Enterprise",
+          description: "Per a cadenes de restaurants",
+          cta: "Veure demo",
+          features: [
+            "Bot WhatsApp",
+            "Assistent telefònic",
+            "Reserves il·limitades",
+            "Multi-restaurant",
+            "Dashboard complet",
+            "Taules il·limitades",
+            "Suport prioritari 24/7",
+            "Confirmacions automàtiques",
+            "Recordatoris intel·ligents",
+            "Informes avançats",
+            "Multiidioma",
+          ],
+        },
+      ],
+    },
+    it: {
+      title: "Prezzi semplici e trasparenti",
+      subtitle:
+        "Scegli il piano perfetto per il tuo ristorante. Nessun costo nascosto, puoi annullare quando vuoi.",
+      perMonth: "/mese",
+      popularTag: "Più scelto",
+      plans: [
+        {
+          name: "Gratuito",
+          description: "Per scoprire la piattaforma",
+          cta: "Inizia gratis",
+          features: [
+            "Dashboard di base",
+            "Fino a 20 prenotazioni/mese",
+            "3 tavoli configurabili",
+            "Supporto via email",
+            "Bot WhatsApp conversazionale",
+            "Assistente telefonico",
+            "Promemoria automatici",
+          ],
+        },
+        {
+          name: "Prova 14 giorni",
+          description: "Prova tutto per 2 settimane",
+          cta: "Prova gratis",
+          features: [
+            "Bot WhatsApp",
+            "Fino a 100 prenotazioni",
+            "Dashboard completo",
+            "5 tavoli configurabili",
+            "Conferme automatiche",
+            "Promemoria intelligenti",
+            "Nessun impegno, senza carta",
+            "Assistente telefonico",
+          ],
+        },
+        {
+          name: "Professional",
+          description: "Per ristoranti consolidati",
+          cta: "Guarda la demo",
+          features: [
+            "Bot WhatsApp",
+            "Fino a 500 prenotazioni/mese",
+            "Dashboard completo",
+            "Tavoli illimitati",
+            "Supporto prioritario 24/7",
+            "Conferme automatiche",
+            "Promemoria intelligenti",
+            "Report avanzati",
+            "Multi‑lingua",
+            "Assistente telefonico",
+          ],
+        },
+        {
+          name: "Enterprise",
+          description: "Per catene di ristoranti",
+          cta: "Guarda la demo",
+          features: [
+            "Bot WhatsApp",
+            "Assistente telefonico",
+            "Prenotazioni illimitate",
+            "Multi‑ristorante",
+            "Dashboard completo",
+            "Tavoli illimitati",
+            "Supporto prioritario 24/7",
+            "Conferme automatiche",
+            "Promemoria intelligenti",
+            "Report avanzati",
+            "Multi‑lingua",
+          ],
+        },
+      ],
+    },
+  } as const;
+
+  const t = copy[language];
+
   const plans = [
     {
-      name: "Gratuito",
+      name: t.plans[0].name,
       price: "0",
-      description: "Para descubrir la plataforma",
+      description: t.plans[0].description,
       features: [
-        { text: "Dashboard básico", included: true },
-        { text: "Hasta 20 reservas/mes", included: true },
-        { text: "3 mesas configurables", included: true },
-        { text: "Soporte por email", included: true },
-        { text: "Bot WhatsApp conversacional", included: false },
-        { text: "Asistente telefónico", included: false },
-        { text: "Recordatorios automáticos", included: false },
+        { text: t.plans[0].features[0], included: true },
+        { text: t.plans[0].features[1], included: true },
+        { text: t.plans[0].features[2], included: true },
+        { text: t.plans[0].features[3], included: true },
+        { text: t.plans[0].features[4], included: false },
+        { text: t.plans[0].features[5], included: false },
+        { text: t.plans[0].features[6], included: false },
       ] as PlanFeature[],
-      cta: "Empezar Gratis",
+      cta: t.plans[0].cta,
       popular: false
     },
     {
-      name: "Prueba 14 días",
+      name: t.plans[1].name,
       price: "0",
-      description: "Prueba todo durante 2 semanas",
+      description: t.plans[1].description,
       features: [
-        { text: "Bot WhatsApp", included: true },
-        { text: "Hasta 100 reservas", included: true },
-        { text: "Dashboard completo", included: true },
-        { text: "5 mesas configurables", included: true },
-        { text: "Confirmaciones automáticas", included: true },
-        { text: "Recordatorios inteligentes", included: true },
-        { text: "Sin compromiso, sin tarjeta", included: true },
-        { text: "Asistente telefónico", included: false },
+        { text: t.plans[1].features[0], included: true },
+        { text: t.plans[1].features[1], included: true },
+        { text: t.plans[1].features[2], included: true },
+        { text: t.plans[1].features[3], included: true },
+        { text: t.plans[1].features[4], included: true },
+        { text: t.plans[1].features[5], included: true },
+        { text: t.plans[1].features[6], included: true },
+        { text: t.plans[1].features[7], included: false },
       ] as PlanFeature[],
-      cta: "Probar Gratis",
+      cta: t.plans[1].cta,
       popular: false
     },
     {
-      name: "Professional",
+      name: t.plans[2].name,
       price: "65",
-      description: "Para restaurantes establecidos",
+      description: t.plans[2].description,
       features: [
-        { text: "Bot WhatsApp", included: true },
-        { text: "Hasta 500 reservas/mes", included: true },
-        { text: "Dashboard completo", included: true },
-        { text: "Mesas ilimitadas", included: true },
-        { text: "Soporte prioritario 24/7", included: true },
-        { text: "Confirmaciones automáticas", included: true },
-        { text: "Recordatorios inteligentes", included: true },
-        { text: "Reportes avanzados", included: true },
-        { text: "Multi-idioma", included: true },
-        { text: "Asistente telefónico", included: false },
+        { text: t.plans[2].features[0], included: true },
+        { text: t.plans[2].features[1], included: true },
+        { text: t.plans[2].features[2], included: true },
+        { text: t.plans[2].features[3], included: true },
+        { text: t.plans[2].features[4], included: true },
+        { text: t.plans[2].features[5], included: true },
+        { text: t.plans[2].features[6], included: true },
+        { text: t.plans[2].features[7], included: true },
+        { text: t.plans[2].features[8], included: true },
+        { text: t.plans[2].features[9], included: false },
       ] as PlanFeature[],
-      cta: "Ver Demo",
+      cta: t.plans[2].cta,
       popular: true
     },
     {
-      name: "Enterprise",
+      name: t.plans[3].name,
       price: "150",
-      description: "Para cadenas de restaurantes",
+      description: t.plans[3].description,
       features: [
-        { text: "Bot WhatsApp", included: true },
-        { text: "Asistente telefónico", included: true },
-        { text: "Reservas ilimitadas", included: true },
-        { text: "Multi-restaurante", included: true },
-        { text: "Dashboard completo", included: true },
-        { text: "Mesas ilimitadas", included: true },
-        { text: "Soporte prioritario 24/7", included: true },
-        { text: "Confirmaciones automáticas", included: true },
-        { text: "Recordatorios inteligentes", included: true },
-        { text: "Reportes avanzados", included: true },
-        { text: "Multi-idioma", included: true },
+        { text: t.plans[3].features[0], included: true },
+        { text: t.plans[3].features[1], included: true },
+        { text: t.plans[3].features[2], included: true },
+        { text: t.plans[3].features[3], included: true },
+        { text: t.plans[3].features[4], included: true },
+        { text: t.plans[3].features[5], included: true },
+        { text: t.plans[3].features[6], included: true },
+        { text: t.plans[3].features[7], included: true },
+        { text: t.plans[3].features[8], included: true },
+        { text: t.plans[3].features[9], included: true },
+        { text: t.plans[3].features[10], included: true },
       ] as PlanFeature[],
-      cta: "Ver Demo",
+      cta: t.plans[3].cta,
       popular: false
     }
   ];
@@ -93,10 +393,10 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Precios simples y transparentes
+            {t.title}
           </h2>
           <p className="text-xl text-muted-foreground">
-            Elige el plan perfecto para tu restaurante. Sin costes ocultos, cancela cuando quieras.
+            {t.subtitle}
           </p>
         </div>
 
@@ -114,7 +414,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <div className="px-4 py-1 bg-gradient-primary text-white text-sm font-semibold rounded-full flex items-center gap-1 shadow-medium">
                     <Sparkles className="w-4 h-4" />
-                    Más Popular
+                    {t.popularTag}
                   </div>
                 </div>
               )}
@@ -127,7 +427,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
 
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold">{plan.price}€</span>
-                  <span className="text-muted-foreground text-sm">/mes</span>
+                  <span className="text-muted-foreground text-sm">{t.perMonth}</span>
                 </div>
 
                 <Button

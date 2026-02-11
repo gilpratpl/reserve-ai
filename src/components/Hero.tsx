@@ -1,12 +1,64 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Bot, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-restaurant.jpg";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface HeroProps {
   onDemoClick?: () => void;
 }
 
 const Hero = ({ onDemoClick }: HeroProps) => {
+  const { language } = useLanguage();
+
+  const copy = {
+    es: {
+      badge: "IA para Restaurantes",
+      titleMain: "Reservas Automáticas",
+      titleHighlight: "con Inteligencia Artificial",
+      subtitle:
+        "Bot de WhatsApp y teléfono que gestiona tus reservas 24/7. Dashboard completo para controlar mesas y disponibilidad en tiempo real.",
+      cta: "Pruébalo ahora",
+      statAutomation: "Automatización",
+      statAvailability: "Disponibilidad",
+      statRestaurants: "Restaurantes",
+    },
+    en: {
+      badge: "AI for Restaurants",
+      titleMain: "Automatic Reservations",
+      titleHighlight: "with Artificial Intelligence",
+      subtitle:
+        "WhatsApp and phone bot that manages your bookings 24/7, with a full dashboard to control tables and real‑time availability.",
+      cta: "Try it now",
+      statAutomation: "Automation",
+      statAvailability: "Availability",
+      statRestaurants: "Restaurants",
+    },
+    ca: {
+      badge: "IA per a Restaurants",
+      titleMain: "Reserves automàtiques",
+      titleHighlight: "amb Intel·ligència Artificial",
+      subtitle:
+        "Bot de WhatsApp i telèfon que gestiona les teves reserves 24/7. Panell complet per controlar taules i disponibilitat en temps real.",
+      cta: "Prova-ho ara",
+      statAutomation: "Automatització",
+      statAvailability: "Disponibilitat",
+      statRestaurants: "Restaurants",
+    },
+    it: {
+      badge: "IA per Ristoranti",
+      titleMain: "Prenotazioni automatiche",
+      titleHighlight: "con Intelligenza Artificiale",
+      subtitle:
+        "Bot WhatsApp e telefonico che gestisce le tue prenotazioni 24/7. Dashboard completo per controllare tavoli e disponibilità in tempo reale.",
+      cta: "Provalo ora",
+      statAutomation: "Automazione",
+      statAvailability: "Disponibilità",
+      statRestaurants: "Ristoranti",
+    },
+  } as const;
+
+  const t = copy[language];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-soft">
       {/* Background image with overlay */}
@@ -26,7 +78,7 @@ const Hero = ({ onDemoClick }: HeroProps) => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <Bot className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">
-              IA para Restaurantes ·{" "}
+              {t.badge} ·{" "}
               <a
                 href="https://ndxai.eu"
                 target="_blank"
@@ -40,15 +92,15 @@ const Hero = ({ onDemoClick }: HeroProps) => {
 
           {/* Headline */}
           <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-normal md:leading-tight animate-in fade-in slide-in-from-bottom-5 duration-700 delay-100 pb-2">
-            Reservas Automáticas
+            {t.titleMain}
             <span className="block mt-2 bg-gradient-primary bg-clip-text text-transparent pb-1">
-              con Inteligencia Artificial
+              {t.titleHighlight}
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
-            Bot de WhatsApp y teléfono que gestiona tus reservas 24/7. Dashboard completo para controlar mesas y disponibilidad en tiempo real.
+            {t.subtitle}
           </p>
 
           {/* CTA Buttons */}
@@ -60,7 +112,8 @@ const Hero = ({ onDemoClick }: HeroProps) => {
               onClick={onDemoClick}
             >
               <Calendar className="mr-2 w-5 h-5" />
-              Pruebalo ahora
+              {t.cta}
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
 
@@ -68,15 +121,15 @@ const Hero = ({ onDemoClick }: HeroProps) => {
           <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
             <div className="space-y-1">
               <div className="text-3xl md:text-4xl font-bold text-primary">98%</div>
-              <div className="text-sm text-muted-foreground">Automatización</div>
+              <div className="text-sm text-muted-foreground">{t.statAutomation}</div>
             </div>
             <div className="space-y-1">
               <div className="text-3xl md:text-4xl font-bold text-primary">24/7</div>
-              <div className="text-sm text-muted-foreground">Disponibilidad</div>
+              <div className="text-sm text-muted-foreground">{t.statAvailability}</div>
             </div>
             <div className="space-y-1">
               <div className="text-3xl md:text-4xl font-bold text-primary">+50</div>
-              <div className="text-sm text-muted-foreground">Restaurantes</div>
+              <div className="text-sm text-muted-foreground">{t.statRestaurants}</div>
             </div>
           </div>
         </div>
