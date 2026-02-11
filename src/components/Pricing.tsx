@@ -1,26 +1,63 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Check, Sparkles } from "lucide-react";
+import { Check, X, Sparkles } from "lucide-react";
 
 interface PricingProps {
   onDemoClick?: () => void;
 }
 
+interface PlanFeature {
+  text: string;
+  included: boolean;
+}
+
 const Pricing = ({ onDemoClick }: PricingProps) => {
   const plans = [
+    {
+      name: "Gratuito",
+      price: "0",
+      description: "Para descubrir la plataforma",
+      features: [
+        { text: "Dashboard básico", included: true },
+        { text: "Hasta 20 reservas/mes", included: true },
+        { text: "3 mesas configurables", included: true },
+        { text: "Soporte por email", included: true },
+        { text: "Bot WhatsApp conversacional", included: false },
+        { text: "Asistente telefónico", included: false },
+        { text: "Recordatorios automáticos", included: false },
+      ] as PlanFeature[],
+      cta: "Empezar Gratis",
+      popular: false
+    },
+    {
+      name: "Prueba 14 días",
+      price: "0",
+      description: "Prueba todo durante 2 semanas",
+      features: [
+        { text: "Bot WhatsApp conversacional", included: true },
+        { text: "Hasta 100 reservas", included: true },
+        { text: "Dashboard completo", included: true },
+        { text: "5 mesas configurables", included: true },
+        { text: "Confirmaciones automáticas", included: true },
+        { text: "Recordatorios inteligentes", included: true },
+        { text: "Sin compromiso, sin tarjeta", included: true },
+      ] as PlanFeature[],
+      cta: "Probar Gratis",
+      popular: false
+    },
     {
       name: "Starter",
       price: "49",
       description: "Perfecto para comenzar",
       features: [
-        "Bot WhatsApp incluido",
-        "Hasta 100 reservas/mes",
-        "Dashboard básico",
-        "5 mesas configurables",
-        "Soporte por email",
-        "Confirmaciones automáticas"
-      ],
-      cta: "-",
+        { text: "Bot WhatsApp incluido", included: true },
+        { text: "Hasta 100 reservas/mes", included: true },
+        { text: "Dashboard básico", included: true },
+        { text: "5 mesas configurables", included: true },
+        { text: "Soporte por email", included: true },
+        { text: "Confirmaciones automáticas", included: true },
+      ] as PlanFeature[],
+      cta: "Ver Demo",
       popular: false
     },
     {
@@ -28,17 +65,17 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
       price: "99",
       description: "Para restaurantes establecidos",
       features: [
-        "Bot WhatsApp + Teléfono",
-        "Hasta 500 reservas/mes",
-        "Dashboard completo",
-        "Mesas ilimitadas",
-        "Soporte prioritario 24/7",
-        "Confirmaciones automáticas",
-        "Recordatorios inteligentes",
-        "Reportes avanzados",
-        "Multi-idioma"
-      ],
-      cta: "Agendar Demo",
+        { text: "Bot WhatsApp + Teléfono", included: true },
+        { text: "Hasta 500 reservas/mes", included: true },
+        { text: "Dashboard completo", included: true },
+        { text: "Mesas ilimitadas", included: true },
+        { text: "Soporte prioritario 24/7", included: true },
+        { text: "Confirmaciones automáticas", included: true },
+        { text: "Recordatorios inteligentes", included: true },
+        { text: "Reportes avanzados", included: true },
+        { text: "Multi-idioma", included: true },
+      ] as PlanFeature[],
+      cta: "Ver Demo",
       popular: true
     },
     {
@@ -46,17 +83,17 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
       price: "299",
       description: "Para cadenas de restaurantes",
       features: [
-        "Todo en Professional",
-        "Reservas ilimitadas",
-        "Multi-restaurante",
-        "API personalizada",
-        "Integración con POS",
-        "Gestor de cuenta dedicado",
-        "Personalización completa",
-        "SLA garantizado",
-        "Training del equipo"
-      ],
-      cta: "Agendar Demo",
+        { text: "Todo en Professional", included: true },
+        { text: "Reservas ilimitadas", included: true },
+        { text: "Multi-restaurante", included: true },
+        { text: "API personalizada", included: true },
+        { text: "Integración con POS", included: true },
+        { text: "Gestor de cuenta dedicado", included: true },
+        { text: "Personalización completa", included: true },
+        { text: "SLA garantizado", included: true },
+        { text: "Training del equipo", included: true },
+      ] as PlanFeature[],
+      cta: "Ver Demo",
       popular: false
     }
   ];
@@ -75,12 +112,12 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         </div>
 
         {/* Pricing cards */}
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative p-8 ${plan.popular
-                ? 'border-2 border-primary shadow-medium scale-105 lg:scale-110'
+              className={`relative p-6 ${plan.popular
+                ? 'border-2 border-primary shadow-medium scale-105'
                 : 'border-border/50'
                 }`}
             >
@@ -93,38 +130,40 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
                 </div>
               )}
 
-              <div className="space-y-6">
-                {/* Plan name */}
+              <div className="space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold">{plan.name}</h3>
-                  <p className="text-muted-foreground mt-1">{plan.description}</p>
+                  <h3 className="text-xl font-bold">{plan.name}</h3>
+                  <p className="text-muted-foreground text-sm mt-1">{plan.description}</p>
                 </div>
 
-                {/* Price */}
-                <div className="flex items-baseline gap-2">
-                  <span className="text-5xl font-bold">{plan.price}€</span>
-                  <span className="text-muted-foreground">/mes</span>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold">{plan.price}€</span>
+                  <span className="text-muted-foreground text-sm">/mes</span>
                 </div>
 
-                {/* CTA */}
                 <Button
-                  className={`w-full h-12 ${plan.popular
+                  className={`w-full h-11 ${plan.popular
                     ? 'bg-gradient-primary hover:opacity-90 shadow-soft'
                     : ''
                     }`}
                   variant={plan.popular ? 'default' : 'outline'}
                   size="lg"
-                  onClick={plan.cta === "Pruebalo ahora" ? onDemoClick : undefined}
+                  onClick={onDemoClick}
                 >
                   {plan.cta}
                 </Button>
 
-                {/* Features */}
-                <ul className="space-y-3 pt-4">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">{feature}</span>
+                <ul className="space-y-2.5 pt-3">
+                  {(plan.features as PlanFeature[]).map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      {feature.included ? (
+                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      ) : (
+                        <X className="w-4 h-4 text-muted-foreground/50 flex-shrink-0 mt-0.5" />
+                      )}
+                      <span className={`text-sm ${feature.included ? 'text-foreground' : 'text-muted-foreground/60 line-through'}`}>
+                        {feature.text}
+                      </span>
                     </li>
                   ))}
                 </ul>
