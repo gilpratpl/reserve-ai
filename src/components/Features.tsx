@@ -373,9 +373,9 @@ const Features = () => {
       <div className="container mx-auto">
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-normal pb-2 mb-6">
             {t.sectionTitleLine1}
-            <span className="block mt-2 bg-gradient-primary bg-clip-text text-transparent">
+            <span className="block mt-2 text-primary pb-1">
               {t.sectionTitleLine2}
             </span>
           </h2>

@@ -29,7 +29,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Empezar gratis",
           features: [
             "Dashboard básico",
-            "Hasta 20 reservas/mes",
             "3 mesas configurables",
             "Soporte por email",
             "Bot WhatsApp conversacional",
@@ -45,7 +44,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
             "Bot WhatsApp",
             "Hasta 100 reservas",
             "Dashboard completo",
-            "5 mesas configurables",
             "Confirmaciones automáticas",
             "Recordatorios inteligentes",
             "Sin compromiso, sin tarjeta",
@@ -60,7 +58,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
             "Bot WhatsApp",
             "Hasta 500 reservas/mes",
             "Dashboard completo",
-            "Mesas ilimitadas",
             "Soporte prioritario 24/7",
             "Confirmaciones automáticas",
             "Recordatorios inteligentes",
@@ -76,7 +73,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           features: [
             "Bot WhatsApp",
             "Asistente telefónico",
-            "Reservas ilimitadas",
             "Multi-restaurante",
             "Dashboard completo",
             "Mesas ilimitadas",
@@ -116,9 +112,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Try for free",
           features: [
             "WhatsApp bot",
-            "Up to 100 bookings",
             "Full dashboard",
-            "5 configurable tables",
             "Automatic confirmations",
             "Smart reminders",
             "No commitment, no card",
@@ -131,9 +125,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "View demo",
           features: [
             "WhatsApp bot",
-            "Up to 500 bookings / month",
             "Full dashboard",
-            "Unlimited tables",
             "Priority support 24/7",
             "Automatic confirmations",
             "Smart reminders",
@@ -149,10 +141,8 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           features: [
             "WhatsApp bot",
             "Phone assistant",
-            "Unlimited bookings",
             "Multi‑restaurant",
             "Full dashboard",
-            "Unlimited tables",
             "Priority support 24/7",
             "Automatic confirmations",
             "Smart reminders",
@@ -175,8 +165,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Començar gratis",
           features: [
             "Dashboard bàsic",
-            "Fins a 20 reserves/mes",
-            "3 taules configurables",
             "Suport per correu",
             "Bot de WhatsApp conversacional",
             "Assistent telefònic",
@@ -189,9 +177,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Provar gratis",
           features: [
             "Bot WhatsApp",
-            "Fins a 100 reserves",
             "Dashboard complet",
-            "5 taules configurables",
             "Confirmacions automàtiques",
             "Recordatoris intel·ligents",
             "Sense compromís ni targeta",
@@ -204,9 +190,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Veure demo",
           features: [
             "Bot WhatsApp",
-            "Fins a 500 reserves/mes",
             "Dashboard complet",
-            "Taules il·limitades",
             "Suport prioritari 24/7",
             "Confirmacions automàtiques",
             "Recordatoris intel·ligents",
@@ -222,10 +206,8 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           features: [
             "Bot WhatsApp",
             "Assistent telefònic",
-            "Reserves il·limitades",
             "Multi-restaurant",
             "Dashboard complet",
-            "Taules il·limitades",
             "Suport prioritari 24/7",
             "Confirmacions automàtiques",
             "Recordatoris intel·ligents",
@@ -248,8 +230,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Inizia gratis",
           features: [
             "Dashboard di base",
-            "Fino a 20 prenotazioni/mese",
-            "3 tavoli configurabili",
             "Supporto via email",
             "Bot WhatsApp conversazionale",
             "Assistente telefonico",
@@ -262,9 +242,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Prova gratis",
           features: [
             "Bot WhatsApp",
-            "Fino a 100 prenotazioni",
             "Dashboard completo",
-            "5 tavoli configurabili",
             "Conferme automatiche",
             "Promemoria intelligenti",
             "Nessun impegno, senza carta",
@@ -277,9 +255,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Guarda la demo",
           features: [
             "Bot WhatsApp",
-            "Fino a 500 prenotazioni/mese",
             "Dashboard completo",
-            "Tavoli illimitati",
             "Supporto prioritario 24/7",
             "Conferme automatiche",
             "Promemoria intelligenti",
@@ -295,10 +271,8 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           features: [
             "Bot WhatsApp",
             "Assistente telefonico",
-            "Prenotazioni illimitate",
             "Multi‑ristorante",
             "Dashboard completo",
-            "Tavoli illimitati",
             "Supporto prioritario 24/7",
             "Conferme automatiche",
             "Promemoria intelligenti",
@@ -314,22 +288,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
 
   const plans = [
     {
-      name: t.plans[0].name,
-      price: "0",
-      description: t.plans[0].description,
-      features: [
-        { text: t.plans[0].features[0], included: true },
-        { text: t.plans[0].features[1], included: true },
-        { text: t.plans[0].features[2], included: true },
-        { text: t.plans[0].features[3], included: true },
-        { text: t.plans[0].features[4], included: false },
-        { text: t.plans[0].features[5], included: false },
-        { text: t.plans[0].features[6], included: false },
-      ] as PlanFeature[],
-      cta: t.plans[0].cta,
-      popular: false
-    },
-    {
       name: t.plans[1].name,
       price: "0",
       description: t.plans[1].description,
@@ -339,9 +297,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         { text: t.plans[1].features[2], included: true },
         { text: t.plans[1].features[3], included: true },
         { text: t.plans[1].features[4], included: true },
-        { text: t.plans[1].features[5], included: true },
-        { text: t.plans[1].features[6], included: true },
-        { text: t.plans[1].features[7], included: false },
+        { text: t.plans[1].features[5], included: false },
       ] as PlanFeature[],
       cta: t.plans[1].cta,
       popular: false
@@ -358,9 +314,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         { text: t.plans[2].features[4], included: true },
         { text: t.plans[2].features[5], included: true },
         { text: t.plans[2].features[6], included: true },
-        { text: t.plans[2].features[7], included: true },
-        { text: t.plans[2].features[8], included: true },
-        { text: t.plans[2].features[9], included: false },
+        { text: t.plans[2].features[7], included: false },
       ] as PlanFeature[],
       cta: t.plans[2].cta,
       popular: true
@@ -379,8 +333,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         { text: t.plans[3].features[6], included: true },
         { text: t.plans[3].features[7], included: true },
         { text: t.plans[3].features[8], included: true },
-        { text: t.plans[3].features[9], included: true },
-        { text: t.plans[3].features[10], included: true },
       ] as PlanFeature[],
       cta: t.plans[3].cta,
       popular: false
@@ -401,7 +353,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         </div>
 
         {/* Pricing cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={index}
