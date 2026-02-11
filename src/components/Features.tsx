@@ -90,9 +90,8 @@ const Features = () => {
           ))}
         </div>
 
-        {/* Product showcase */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* WhatsApp Bot */}
+        {/* WhatsApp Bot */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
               <MessageSquare className="w-4 h-4 text-primary" />
@@ -130,20 +129,24 @@ const Features = () => {
               className="rounded-2xl shadow-soft lg:hidden"
             />
           </div>
-          <div className="hidden lg:block">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform rotate-3"></div>
             <ZoomableImage
               src={whatsappImage}
               alt="Sistema de gestión de reservas - Dashboard de horarios"
-              className="rounded-2xl shadow-medium hover:shadow-lg transition-shadow"
+              className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02] hidden lg:block"
             />
           </div>
+        </div>
 
-          {/* Dashboard */}
-          <div className="hidden lg:block lg:order-first">
+        {/* Dashboard */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
+          <div className="relative lg:order-first">
+            <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform -rotate-3"></div>
             <ZoomableImage
               src={dashboardImage}
               alt="Conversación de WhatsApp - Reserva de restaurante"
-              className="rounded-2xl shadow-medium hover:shadow-lg transition-shadow"
+              className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
             />
           </div>
           <div className="space-y-6 lg:order-last">
