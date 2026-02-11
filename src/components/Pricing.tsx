@@ -46,21 +46,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
       popular: false
     },
     {
-      name: "Starter",
-      price: "49",
-      description: "Perfecto para comenzar",
-      features: [
-        { text: "Bot WhatsApp incluido", included: true },
-        { text: "Hasta 100 reservas/mes", included: true },
-        { text: "Dashboard básico", included: true },
-        { text: "5 mesas configurables", included: true },
-        { text: "Soporte por email", included: true },
-        { text: "Confirmaciones automáticas", included: true },
-      ] as PlanFeature[],
-      cta: "Ver Demo",
-      popular: false
-    },
-    {
       name: "Professional",
       price: "99",
       description: "Para restaurantes establecidos",
@@ -112,7 +97,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         </div>
 
         {/* Pricing cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={index}
