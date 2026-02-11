@@ -5,7 +5,7 @@ import whatsappImage from "@/assets/chat-real.png";
 import dashboardImage from "@/assets/whatsapp-reserva.png";
 import tableLayoutImage from "@/assets/table-layout.png";
 import statsImage from "@/assets/stats-dashboard.png";
-import mediaImage from "@/assets/media-management.jpg";
+import mediaImage from "@/assets/media-management.png";
 
 interface ZoomableImageProps {
   src: string;
@@ -35,7 +35,7 @@ const Features = () => {
     },
     {
       icon: MessageSquare,
-      title: "WhatsApp & SMS",
+      title: "WhatsApp",
       description: "Integración nativa con WhatsApp Business y mensajería"
     },
     {

@@ -161,10 +161,11 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           ))}
         </div>
 
-        {/* Bottom note */}
+        {/* Bottom note 
         <p className="text-center text-muted-foreground mt-12">
           Todos los planes incluyen 14 días de prueba gratuita. No se requiere tarjeta de crédito.
         </p>
+        */}
       </div>
     </section>
   );
