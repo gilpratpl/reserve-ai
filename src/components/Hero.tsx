@@ -75,7 +75,7 @@ const Hero = ({ onDemoClick }: HeroProps) => {
               <div className="text-sm text-muted-foreground">Disponibilidad</div>
             </div>
             <div className="space-y-1">
-              <div className="text-3xl md:text-4xl font-bold text-primary">+500</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary">+50</div>
               <div className="text-sm text-muted-foreground">Restaurantes</div>
             </div>
           </div>

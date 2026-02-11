@@ -141,14 +141,7 @@ const Features = () => {
 
         {/* Dashboard */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
-          <div className="relative lg:order-first">
-            <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform -rotate-3"></div>
-            <ZoomableImage
-              src={dashboardImage}
-              alt="Conversación de WhatsApp - Reserva de restaurante"
-              className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
-            />
-          </div>
+          {/* En móvil va primero el texto, en desktop se invierte con lg:order-* */}
           <div className="space-y-6 lg:order-last">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20">
               <LayoutDashboard className="w-4 h-4 text-accent" />
@@ -180,10 +173,13 @@ const Features = () => {
                 <span className="text-foreground">Estadísticas y reportes detallados</span>
               </li>
             </ul>
+          </div>
+          <div className="relative lg:order-first">
+            <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform -rotate-3"></div>
             <ZoomableImage
               src={dashboardImage}
               alt="Conversación de WhatsApp - Reserva de restaurante"
-              className="rounded-2xl shadow-soft lg:hidden"
+              className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
             />
           </div>
         </div>
@@ -244,15 +240,8 @@ const Features = () => {
 
         {/* Statistics Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
-          <div className="relative lg:order-first">
-            <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform -rotate-3"></div>
-            <ZoomableImage
-              src={statsImage}
-              alt="Dashboard de estadísticas de reservas"
-              className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
-            />
-          </div>
-          <div className="space-y-6">
+          {/* En móvil va primero el texto, en desktop se invierte con lg:order-* */}
+          <div className="space-y-6 lg:order-last">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20">
               <BarChart3 className="w-4 h-4 text-accent" />
               <span className="text-sm font-medium text-accent">Estadísticas</span>
@@ -287,6 +276,14 @@ const Features = () => {
               </div>
             </div>
           </div>
+          <div className="relative lg:order-first">
+            <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform -rotate-3"></div>
+            <ZoomableImage
+              src={statsImage}
+              alt="Dashboard de estadísticas de reservas"
+              className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            />
+          </div>
         </div>
 
         {/* Media Section */}
@@ -300,7 +297,8 @@ const Features = () => {
               Comparte tu contenido con los clientes
             </h3>
             <p className="text-lg text-muted-foreground">
-              Sube y gestiona todo el contenido visual de tu restaurante: menú del día, carta, eventos especiales y promociones. Tus clientes siempre tendrán la información actualizada.
+              Sube y gestiona todo el contenido visual de tu restaurante: menú del día, carta, eventos especiales y promociones. Tus clientes siempre tendrán la información actualizada y 
+              podran recibirla por whatsapp.
             </p>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">

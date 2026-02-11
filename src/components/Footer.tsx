@@ -100,11 +100,7 @@ const Footer = () => {
             </a>
             . Todos los derechos reservados.
           </p>
-          <div className="flex gap-6">
-            <a href="https://www.linkedin.com/company/neural-dynamics-ai" className="text-muted-foreground hover:text-primary transition-colors">
-              LinkedIn
-            </a>
-          </div>
+       
         </div>
       </div>
     </footer>
