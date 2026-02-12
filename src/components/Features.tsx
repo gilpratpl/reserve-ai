@@ -1,12 +1,8 @@
 import { Bot, LayoutDashboard, MessageSquare, Phone, Calendar, Users, BarChart3, Image } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import whatsappImage from "@/assets/chat-real.png";
-import dashboardImage from "@/assets/whatsapp-reserva.png";
-import tableLayoutImage from "@/assets/table-layout.png";
-import statsImage from "@/assets/stats-dashboard.png";
-import mediaImage from "@/assets/media-management.png";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { getFeatureImages } from "@/config/featureImages";
 
 interface ZoomableImageProps {
   src: string;
@@ -29,6 +25,7 @@ const ZoomableImage = ({ src, alt, className }: ZoomableImageProps) => (
 
 const Features = () => {
   const { language } = useLanguage();
+  const images = getFeatureImages(language);
 
   const copy = {
     es: {
@@ -432,7 +429,7 @@ const Features = () => {
               </li>
             </ul>
             <ZoomableImage
-              src={whatsappImage}
+              src={images.chatReal}
               alt="Sistema de gestión de reservas - Dashboard de horarios"
               className="rounded-2xl shadow-soft lg:hidden"
             />
@@ -440,7 +437,7 @@ const Features = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform rotate-3"></div>
             <ZoomableImage
-              src={whatsappImage}
+              src={images.chatReal}
               alt="Sistema de gestión de reservas - Dashboard de horarios"
               className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02] hidden lg:block"
             />
@@ -485,7 +482,7 @@ const Features = () => {
           <div className="relative lg:order-first">
             <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform -rotate-3"></div>
             <ZoomableImage
-              src={dashboardImage}
+              src={images.whatsappReserva}
               alt="Conversación de WhatsApp - Reserva de restaurante"
               className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
             />
@@ -539,7 +536,7 @@ const Features = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform rotate-6"></div>
             <ZoomableImage
-              src={tableLayoutImage}
+              src={images.tableLayout}
               alt="Disposición de mesas del restaurante"
               className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
             />
@@ -587,7 +584,7 @@ const Features = () => {
           <div className="relative lg:order-first">
             <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform -rotate-3"></div>
             <ZoomableImage
-              src={statsImage}
+              src={images.stats}
               alt="Dashboard de estadísticas de reservas"
               className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
             />
@@ -631,7 +628,7 @@ const Features = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl blur-3xl transform rotate-3"></div>
             <ZoomableImage
-              src={mediaImage}
+              src={images.media}
               alt="Gestión de contenido multimedia del restaurante"
               className="relative rounded-2xl shadow-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
             />
