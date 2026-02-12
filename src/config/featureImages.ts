@@ -1,26 +1,26 @@
 import type { Language } from "@/i18n/LanguageContext";
 
 // Imágenes por defecto (español / fallback)
-import chatRealEs from "@/assets/chat-real-es.jpeg";
-import chatRealCa from "@/assets/chat-real-ca.jpeg";
-import chatRealIt from "@/assets/chat-real-it.jpeg";
-import chatRealEn from "@/assets/chat-real-en.jpeg";
-import whatsappReservaEs from "@/assets/whatsapp-reserva.png";
-import whatsappReservaCa from "@/assets/whatsapp-reserva.png";
-import whatsappReservaIt from "@/assets/whatsapp-reserva.png";
-import whatsappReservaEn from "@/assets/whatsapp-reserva.png";
-import tableLayoutEs from "@/assets/table-layout-es.jpeg";
-import tableLayoutCa from "@/assets/table-layout-ca.jpeg";
-import tableLayoutIt from "@/assets/table-layout-it.jpeg";
-import tableLayoutEn from "@/assets/table-layout-en.jpeg";
-import statsEs from "@/assets/stats-dashboard-es.jpeg";
-import statsCa from "@/assets/stats-dashboard-ca.jpeg";
-import statsIt from "@/assets/stats-dashboard-it.jpeg";
-import statsEn from "@/assets/stats-dashboard-en.jpeg";
-import mediaEs from "@/assets/media-management-es.jpeg";
-import mediaCa from "@/assets/media-management-ca.jpeg";
-import mediaIt from "@/assets/media-management-it.jpeg";
-import mediaEn from "@/assets/media-management-en.jpeg";
+import chatRealEs from "@/assets/chat-real-es.png";
+import chatRealCa from "@/assets/chat-real-ca.png";
+import chatRealIt from "@/assets/chat-real-it.png";
+import chatRealEn from "@/assets/chat-real-en.png";
+import whatsappReservaEs from "@/assets/whatsapp-reserva-es.png";
+import whatsappReservaCa from "@/assets/whatsapp-reserva-ca.png";
+import whatsappReservaIt from "@/assets/whatsapp-reserva-it.png";
+import whatsappReservaEn from "@/assets/whatsapp-reserva-en.png";
+import tableLayoutEs from "@/assets/table-layout-es.png";
+import tableLayoutCa from "@/assets/table-layout-ca.png";
+import tableLayoutIt from "@/assets/table-layout-it.png";
+import tableLayoutEn from "@/assets/table-layout-en.png";
+import statsEs from "@/assets/stats-dashboard-es.png";
+import statsCa from "@/assets/stats-dashboard-ca.png";
+import statsIt from "@/assets/stats-dashboard-it.png";
+import statsEn from "@/assets/stats-dashboard-en.png";
+import mediaEs from "@/assets/media-management-es.png";
+import mediaCa from "@/assets/media-management-ca.png";
+import mediaIt from "@/assets/media-management-it.png";
+import mediaEn from "@/assets/media-management-en.png";
 
 
 // Imágenes por idioma - añade imports cuando existan variantes:

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Bot, Calendar } from "lucide-react";
-import heroImage from "@/assets/hero-restaurant.jpg";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 interface HeroProps {
@@ -63,11 +62,7 @@ const Hero = ({ onDemoClick }: HeroProps) => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-soft">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Restaurant interior"
-          className="w-full h-full object-cover opacity-10"
-        />
+
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
       </div>
 
