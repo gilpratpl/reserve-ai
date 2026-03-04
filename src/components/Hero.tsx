@@ -81,7 +81,7 @@ const Hero = ({ onDemoClick }: HeroProps) => {
       <div className="container relative z-10 px-4 mx-auto">
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
           {/* Left: Text */}
-          <div className="space-y-5 text-center lg:text-left">
+          <div className="space-y-5 text-center flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 animate-in fade-in slide-in-from-bottom-4 duration-700">
               <Bot className="w-3.5 h-3.5 text-primary" />
               <span className="text-xs font-medium text-primary">
@@ -99,11 +99,11 @@ const Hero = ({ onDemoClick }: HeroProps) => {
               </span>
             </h1>
 
-            <p className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
+            <p className="text-base md:text-lg text-muted-foreground max-w-lg animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
               {t.subtitle}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start items-center animate-in fade-in slide-in-from-bottom-7 duration-700 delay-300">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center animate-in fade-in slide-in-from-bottom-7 duration-700 delay-300">
               <Button
                 size="lg"
                 className="text-base px-7 h-12 bg-gradient-primary hover:opacity-90"
@@ -116,7 +116,7 @@ const Hero = ({ onDemoClick }: HeroProps) => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-4 max-w-xs mx-auto lg:mx-0 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
+            <div className="grid grid-cols-3 gap-6 pt-4 max-w-xs animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
               <div>
                 <div className="text-xl md:text-2xl font-bold text-primary">98%</div>
                 <div className="text-[11px] text-muted-foreground">{t.statAutomation}</div>
@@ -142,10 +142,12 @@ const Hero = ({ onDemoClick }: HeroProps) => {
                     ref={videoRef}
                     className="w-full aspect-video object-cover"
                     src="/reserbot.mp4"
-                    controls={isPlaying}
+                    controls
                     muted
+                    autoPlay
+                    loop
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
                   />
