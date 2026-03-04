@@ -73,15 +73,15 @@ const Hero = ({ onDemoClick }: HeroProps) => {
   };
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden bg-gradient-soft">
+    <section className="relative min-h-screen lg:h-screen flex items-center overflow-hidden bg-gradient-soft">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
       </div>
 
-      <div className="container relative z-10 px-4 mx-auto">
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
+      <div className="container relative z-10 px-4 py-24 lg:py-0 mx-auto">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-6 lg:gap-12 items-center max-w-7xl mx-auto">
           {/* Left: Text */}
-          <div className="space-y-5 text-center flex flex-col items-center">
+          <div className="space-y-4 lg:space-y-5 text-center flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 animate-in fade-in slide-in-from-bottom-4 duration-700">
               <Bot className="w-3.5 h-3.5 text-primary" />
               <span className="text-xs font-medium text-primary">
@@ -92,14 +92,14 @@ const Hero = ({ onDemoClick }: HeroProps) => {
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight animate-in fade-in slide-in-from-bottom-5 duration-700 delay-100">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight animate-in fade-in slide-in-from-bottom-5 duration-700 delay-100">
               {t.titleMain}
               <span className="block mt-1 bg-gradient-primary bg-clip-text text-transparent pb-1">
                 {t.titleHighlight}
               </span>
             </h1>
 
-            <p className="text-base md:text-lg text-muted-foreground max-w-lg animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
+            <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-lg animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
               {t.subtitle}
             </p>
 
@@ -116,7 +116,7 @@ const Hero = ({ onDemoClick }: HeroProps) => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-4 max-w-xs animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
+            <div className="hidden sm:grid grid-cols-3 gap-6 pt-4 max-w-xs animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
               <div>
                 <div className="text-xl md:text-2xl font-bold text-primary">98%</div>
                 <div className="text-[11px] text-muted-foreground">{t.statAutomation}</div>
