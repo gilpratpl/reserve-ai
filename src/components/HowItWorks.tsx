@@ -6,14 +6,14 @@ const HowItWorks = () => {
 
   const copy = {
     es: {
-      titleLine1: "Implementación en",
-      titleLine2: "menos de 15 minutos",
-      subtitle: "No necesitas conocimientos técnicos. Nuestro sistema se integra sin complicaciones.",
+      titleLine1: "Te lo implementamos con",
+      titleLine2: "nuestros expertos",
+      subtitle: "Nuestro sistema se integra sin complicaciones.",
       steps: [
         {
-          title: "1. Configura tu cuenta",
+          title: "1. Crea tu cuenta",
           description:
-            "Crea tu cuenta en menos de 5 minutos. Conecta tu número de WhatsApp Business y configura el horario de tu restaurante.",
+            "Contacta con nosotros para crear tu cuenta.",
         },
         {
           title: "2. Personaliza tu bot",
@@ -33,14 +33,14 @@ const HowItWorks = () => {
       ],
     },
     en: {
-      titleLine1: "Go live in",
-      titleLine2: "under 15 minutes",
-      subtitle: "No technical skills required. Our system integrates without friction.",
+      titleLine1: "We implement it with",
+      titleLine2: "our experts",
+      subtitle: "Our system integrates without friction.",
       steps: [
         {
-          title: "1. Set up your account",
+          title: "1. Create your account",
           description:
-            "Create your account in under 5 minutes. Connect your WhatsApp Business number and configure your restaurant schedule.",
+            "Contact us to create your account.",
         },
         {
           title: "2. Customize your bot",
@@ -60,15 +60,15 @@ const HowItWorks = () => {
       ],
     },
     ca: {
-      titleLine1: "Posada en marxa en",
-      titleLine2: "menys de 15 minuts",
+      titleLine1: "T'ho implementem amb",
+      titleLine2: "els nostres experts",
       subtitle:
-        "No calen coneixements tècnics. El nostre sistema s’integra sense complicacions.",
+        "El nostre sistema s’integra sense complicacions.",
       steps: [
         {
-          title: "1. Configura el teu compte",
+          title: "1. Creació del teu compte	",
           description:
-            "Crea el teu compte en menys de 5 minuts. Connecta el teu número de WhatsApp Business i configura l’horari del restaurant.",
+            "Contacta amb nosaltres per crear el teu compte.",
         },
         {
           title: "2. Personalitza el bot",
@@ -88,15 +88,15 @@ const HowItWorks = () => {
       ],
     },
     it: {
-      titleLine1: "Attivazione in",
-      titleLine2: "meno di 15 minuti",
+      titleLine1: "Lo implementiamo con",
+      titleLine2: "i nostri esperti",
       subtitle:
-        "Non servono competenze tecniche. Il sistema si integra senza complicazioni.",
+        "Il sistema si integra senza complicazioni.",
       steps: [
         {
-          title: "1. Configura il tuo account",
+          title: "1. Crea il tuo account",
           description:
-            "Crea il tuo account in meno di 5 minuti. Collega il numero WhatsApp Business e imposta gli orari del ristorante.",
+            "Contacta con noi per creare il tuo account.",
         },
         {
           title: "2. Personalizza il bot",

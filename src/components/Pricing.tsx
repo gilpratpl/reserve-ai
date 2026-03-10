@@ -21,7 +21,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
       subtitle:
         "Elige el plan perfecto para tu restaurante. Sin costes ocultos, cancela cuando quieras.",
       perMonth: "/mes",
-      popularTag: "Más Popular",
+      popularTag: "Más popular",
       plans: [
         {
           name: "Gratuito",
@@ -29,9 +29,8 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Empezar gratis",
           features: [
             "Dashboard básico",
-            "3 mesas configurables",
             "Soporte por email",
-            "Bot WhatsApp conversacional",
+            "Bot de WhatsApp conversacional",
             "Asistente telefónico",
             "Recordatorios automáticos",
           ],
@@ -42,49 +41,48 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Probar gratis",
           features: [
             "Bot WhatsApp",
-            "Hasta 100 reservas",
             "Dashboard completo",
             "Confirmaciones automáticas",
             "Recordatorios inteligentes",
-            "Sin compromiso, sin tarjeta",
-            "Asistente telefónico",
+            "Sin compromiso ni tarjeta",
+            "Soporte prioritario 24/7",
+            "Bot de llamadas telefónicas",
           ],
         },
         {
           name: "Professional",
-          description: "Para restaurantes establecidos",
+          description: "Para restaurantes consolidados",
           cta: "Ver demo",
           features: [
             "Bot WhatsApp",
-            "Hasta 500 reservas/mes",
             "Dashboard completo",
             "Soporte prioritario 24/7",
             "Confirmaciones automáticas",
             "Recordatorios inteligentes",
-            "Reportes avanzados",
-            "Multi-idioma",
-            "Asistente telefónico",
+            "Informes avanzados",
+            "Multiidioma",
+            "Bot de llamadas telefónicas",
           ],
         },
         {
           name: "Enterprise",
-          description: "Para cadenas de restaurantes",
+          description: "Professional + bot de llamadas telefónicas",
           cta: "Ver demo",
           features: [
             "Bot WhatsApp",
-            "Asistente telefónico",
+            "Bot de llamadas telefónicas",
             "Multi-restaurante",
             "Dashboard completo",
-            "Mesas ilimitadas",
             "Soporte prioritario 24/7",
             "Confirmaciones automáticas",
             "Recordatorios inteligentes",
-            "Reportes avanzados",
-            "Multi-idioma",
+            "Informes avanzados",
+            "Multiidioma",
           ],
         },
       ],
     },
+  
     en: {
       title: "Simple, transparent pricing",
       subtitle:
@@ -98,8 +96,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           cta: "Start for free",
           features: [
             "Basic dashboard",
-            "Up to 20 bookings / month",
-            "3 configurable tables",
             "Email support",
             "Conversational WhatsApp bot",
             "Phone assistant",
@@ -107,16 +103,17 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           ],
         },
         {
-          name: "14‑day trial",
-          description: "Test everything for 2 weeks",
+          name: "14-day trial",
+          description: "Try everything for 2 weeks",
           cta: "Try for free",
           features: [
             "WhatsApp bot",
             "Full dashboard",
             "Automatic confirmations",
             "Smart reminders",
-            "No commitment, no card",
-            "Phone assistant",
+            "No commitment or card required",
+            "Priority support 24/7",
+            "Phone call bot",
           ],
         },
         {
@@ -130,28 +127,29 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
             "Automatic confirmations",
             "Smart reminders",
             "Advanced reports",
-            "Multi‑language",
-            "Phone assistant",
+            "Multi-language",
+            "Phone call bot",
           ],
         },
         {
           name: "Enterprise",
-          description: "For restaurant chains",
+          description: "Professional + phone call bot",
           cta: "View demo",
           features: [
             "WhatsApp bot",
-            "Phone assistant",
-            "Multi‑restaurant",
+            "Phone call bot",
+            "Multi-restaurant",
             "Full dashboard",
             "Priority support 24/7",
             "Automatic confirmations",
             "Smart reminders",
             "Advanced reports",
-            "Multi‑language",
+            "Multi-language",
           ],
         },
       ],
     },
+  
     ca: {
       title: "Preus simples i transparents",
       subtitle:
@@ -181,7 +179,8 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
             "Confirmacions automàtiques",
             "Recordatoris intel·ligents",
             "Sense compromís ni targeta",
-            "Assistent telefònic",
+            "Suport prioritari 24/7",
+            "Bot trucades telefòniques",
           ],
         },
         {
@@ -196,16 +195,16 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
             "Recordatoris intel·ligents",
             "Informes avançats",
             "Multiidioma",
-            "Assistent telefònic",
+            "Bot trucades telefòniques",
           ],
         },
         {
           name: "Enterprise",
-          description: "Per a cadenes de restaurants",
+          description: "Professional + bot trucades telefòniques",
           cta: "Veure demo",
           features: [
             "Bot WhatsApp",
-            "Assistent telefònic",
+            "Bot trucades telefòniques",
             "Multi-restaurant",
             "Dashboard complet",
             "Suport prioritari 24/7",
@@ -217,12 +216,13 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         },
       ],
     },
+  
     it: {
       title: "Prezzi semplici e trasparenti",
       subtitle:
-        "Scegli il piano perfetto per il tuo ristorante. Nessun costo nascosto, puoi annullare quando vuoi.",
+        "Scegli il piano perfetto per il tuo ristorante. Nessun costo nascosto, annulla quando vuoi.",
       perMonth: "/mese",
-      popularTag: "Più scelto",
+      popularTag: "Più popolare",
       plans: [
         {
           name: "Gratuito",
@@ -245,8 +245,9 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
             "Dashboard completo",
             "Conferme automatiche",
             "Promemoria intelligenti",
-            "Nessun impegno, senza carta",
-            "Assistente telefonico",
+            "Nessun impegno né carta richiesta",
+            "Supporto prioritario 24/7",
+            "Bot di chiamate telefoniche",
           ],
         },
         {
@@ -260,30 +261,30 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
             "Conferme automatiche",
             "Promemoria intelligenti",
             "Report avanzati",
-            "Multi‑lingua",
-            "Assistente telefonico",
+            "Multilingua",
+            "Bot di chiamate telefoniche",
           ],
         },
         {
           name: "Enterprise",
-          description: "Per catene di ristoranti",
+          description: "Professional + bot di chiamate telefoniche",
           cta: "Guarda la demo",
           features: [
             "Bot WhatsApp",
-            "Assistente telefonico",
-            "Multi‑ristorante",
+            "Bot di chiamate telefoniche",
+            "Multi-ristorante",
             "Dashboard completo",
             "Supporto prioritario 24/7",
             "Conferme automatiche",
             "Promemoria intelligenti",
             "Report avanzati",
-            "Multi‑lingua",
+            "Multilingua",
           ],
         },
       ],
     },
   } as const;
-
+  
   const t = copy[language];
 
   const plans = [
@@ -298,7 +299,8 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         { text: t.plans[1].features[3], included: true },
         { text: t.plans[1].features[4], included: true },
         { text: t.plans[1].features[5], included: false },
-      ] as PlanFeature[],
+        { text: t.plans[1].features[6], included: false },
+        ] as PlanFeature[],
       cta: t.plans[1].cta,
       popular: false
     },
@@ -326,7 +328,6 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
       features: [
         { text: t.plans[3].features[0], included: true },
         { text: t.plans[3].features[1], included: true },
-        { text: t.plans[3].features[2], included: true },
         { text: t.plans[3].features[3], included: true },
         { text: t.plans[3].features[4], included: true },
         { text: t.plans[3].features[5], included: true },
