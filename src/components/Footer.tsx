@@ -1,4 +1,3 @@
-import { Utensils } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Footer = () => {
@@ -67,11 +66,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-                <Utensils className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold">Reserbot</span>
+          <div className="flex items-center gap-2">
+          <img src="/logo.svg" alt="Reserbot logo" className="w-14 h-14" />
+              <span className="text-xl font-bold font-brand">Reserbot</span>
             </div>
             <p className="text-muted-foreground max-w-sm">
               {t.brandDescription}

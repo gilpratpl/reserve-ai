@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Utensils, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { LANGUAGE_OPTIONS, useLanguage } from "@/i18n/LanguageContext";
 
 interface NavigationProps {
@@ -64,10 +64,8 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-              <Utensils className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl font-bold">{t.brand}</span>
+            <img src="/logo.svg" alt="Reserbot logo" className="w-14 h-14" />
+            <span className="text-xl font-bold font-brand">{t.brand}</span>
           </div>
 
           {/* Desktop Navigation */}
