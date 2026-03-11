@@ -341,7 +341,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-gradient-soft" id="pricing">
+    <section className="py-16 sm:py-24 px-4 bg-gradient-soft" id="pricing">
       <div className="container mx-auto">
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">

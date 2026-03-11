@@ -71,7 +71,7 @@ const Contact = () => {
   const t = copy[language];
 
   return (
-    <section className="py-24 px-4 bg-background" id="contact">
+    <section className="py-16 sm:py-24 px-4 bg-background" id="contact">
       <div className="container mx-auto">
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">

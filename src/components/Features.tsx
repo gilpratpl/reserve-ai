@@ -366,7 +366,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-background">
+    <section className="py-16 sm:py-24 px-4 bg-background">
       <div className="container mx-auto">
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -396,7 +396,7 @@ const Features = () => {
         </div>
 
         {/* WhatsApp Bot */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
+        <div className="grid lg:grid-cols-2 gap-10 items-center mt-12 pt-12 sm:mt-16 sm:pt-16 lg:mt-20 lg:pt-20 border-t border-border/50">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
               <MessageSquare className="w-4 h-4 text-primary" />
@@ -445,7 +445,7 @@ const Features = () => {
         </div>
 
         {/* Dashboard */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
+        <div className="grid lg:grid-cols-2 gap-10 items-center mt-12 pt-12 sm:mt-16 sm:pt-16 lg:mt-20 lg:pt-20 border-t border-border/50">
           {/* En móvil va primero el texto, en desktop se invierte con lg:order-* */}
           <div className="space-y-6 lg:order-last">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20">
@@ -490,7 +490,7 @@ const Features = () => {
         </div>
 
         {/* Table Layout Management */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
+        <div className="grid lg:grid-cols-2 gap-10 items-center mt-12 pt-12 sm:mt-16 sm:pt-16 lg:mt-20 lg:pt-20 border-t border-border/50">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
               <Calendar className="w-4 h-4 text-primary" />
@@ -544,7 +544,7 @@ const Features = () => {
         </div>
 
         {/* Statistics Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
+        <div className="grid lg:grid-cols-2 gap-10 items-center mt-12 pt-12 sm:mt-16 sm:pt-16 lg:mt-20 lg:pt-20 border-t border-border/50">
           {/* En móvil va primero el texto, en desktop se invierte con lg:order-* */}
           <div className="space-y-6 lg:order-last">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20">
@@ -592,7 +592,7 @@ const Features = () => {
         </div>
 
         {/* Media Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20 pt-20 border-t border-border/50">
+        <div className="grid lg:grid-cols-2 gap-10 items-center mt-12 pt-12 sm:mt-16 sm:pt-16 lg:mt-20 lg:pt-20 border-t border-border/50">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
               <Image className="w-4 h-4 text-primary" />

@@ -43,33 +43,33 @@ const CTA = ({ onDemoClick }: CTAProps) => {
   const t = copy[language];
 
   return (
-    <section className="py-24 px-4 bg-gradient-soft">
+    <section className="py-16 px-4 sm:py-20 bg-gradient-soft">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-primary p-12 md:p-16 shadow-medium">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-primary p-8 sm:p-10 md:p-16 shadow-medium">
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
 
             {/* Content */}
-            <div className="relative z-10 text-center space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm">
+            <div className="relative z-10 text-center space-y-6 sm:space-y-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/20 backdrop-blur-sm">
                 <Sparkles className="w-4 h-4 text-white" />
-                <span className="text-sm font-medium text-white">{t.badge}</span>
+                <span className="text-xs sm:text-sm font-medium text-white">{t.badge}</span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white leading-tight">
                 {t.title}
               </h2>
 
-              <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto">
                 {t.body}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                 <Button
                   size="lg"
-                  className="text-lg px-8 h-14 bg-transparent border-2 border-white text-white hover:bg-white/10"
+                  className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 bg-transparent border-2 border-white text-white hover:bg-white/10"
                   onClick={onDemoClick}
                 >
                   {t.cta}
@@ -77,7 +77,7 @@ const CTA = ({ onDemoClick }: CTAProps) => {
                 </Button>
               </div>
 
-              <p className="text-sm text-white/80">
+              <p className="text-xs sm:text-sm text-white/80">
                 {t.footnote}
               </p>
             </div>

@@ -61,11 +61,15 @@ const Navigation = ({ onDemoClick }: NavigationProps) => {
         }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-12 md:h-20">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img src="/logo.svg" alt="Reserbot logo" className="w-14 h-14" />
-            <span className="text-xl font-bold font-brand">{t.brand}</span>
+            <img
+              src="/logo.svg"
+              alt="Reserbot logo"
+              className="w-8 h-8 md:w-14 md:h-14"
+            />
+            <span className="text-lg md:text-xl font-bold font-brand">{t.brand}</span>
           </div>
 
           {/* Desktop Navigation */}
