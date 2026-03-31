@@ -306,7 +306,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
     },
     {
       name: t.plans[2].name,
-      price: "65",
+      price: "55",
       description: t.plans[2].description,
       features: [
         { text: t.plans[2].features[0], included: true },
@@ -323,7 +323,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
     },
     {
       name: t.plans[3].name,
-      price: "150",
+      price: "120",
       description: t.plans[3].description,
       features: [
         { text: t.plans[3].features[0], included: true },
