@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, X, Sparkles } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import RequestDemoModal from "@/components/RequestDemoModal";
 
 interface PricingProps {
   onDemoClick?: () => void;
@@ -14,6 +16,7 @@ interface PlanFeature {
 
 const Pricing = ({ onDemoClick }: PricingProps) => {
   const { language } = useLanguage();
+  const [requestDemoOpen, setRequestDemoOpen] = useState(false);
 
   const copy = {
     es: {
@@ -302,7 +305,8 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         { text: t.plans[1].features[6], included: false },
         ] as PlanFeature[],
       cta: t.plans[1].cta,
-      popular: false
+      popular: false,
+      isDemoRequest: false,
     },
     {
       name: t.plans[2].name,
@@ -319,7 +323,8 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         { text: t.plans[2].features[7], included: false },
       ] as PlanFeature[],
       cta: t.plans[2].cta,
-      popular: true
+      popular: true,
+      isDemoRequest: true,
     },
     {
       name: t.plans[3].name,
@@ -336,7 +341,8 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
         { text: t.plans[3].features[8], included: true },
       ] as PlanFeature[],
       cta: t.plans[3].cta,
-      popular: false
+      popular: false,
+      isDemoRequest: true,
     }
   ];
 
@@ -390,7 +396,7 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
                     }`}
                   variant={plan.popular ? 'default' : 'outline'}
                   size="lg"
-                  onClick={onDemoClick}
+                  onClick={plan.isDemoRequest ? () => setRequestDemoOpen(true) : onDemoClick}
                 >
                   {plan.cta}
                 </Button>
@@ -414,12 +420,18 @@ const Pricing = ({ onDemoClick }: PricingProps) => {
           ))}
         </div>
 
-        {/* Bottom note 
+        {/* Bottom note
         <p className="text-center text-muted-foreground mt-12">
           Todos los planes incluyen 14 días de prueba gratuita. No se requiere tarjeta de crédito.
         </p>
         */}
       </div>
+
+      <RequestDemoModal
+        open={requestDemoOpen}
+        onOpenChange={setRequestDemoOpen}
+        onSuccess={() => onDemoClick?.()}
+      />
     </section>
   );
 };
